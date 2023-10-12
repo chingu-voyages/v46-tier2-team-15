@@ -1,0 +1,4 @@
+/*
+This page will open as a pop up in front of the Search Page and 
+it will be a page about a single recipe.
+*/

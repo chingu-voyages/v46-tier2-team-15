@@ -1,0 +1,3 @@
+/*
+This component represents a list of returnd recipe cards on the Search Page
+*/

@@ -1,0 +1,4 @@
+/*
+This component represents a 
+single recipe info in the list of recipes on the Search Page 
+*/
