@@ -7,10 +7,15 @@ and we need to make it as a Carousel so the user can
 swipe left right to load new lists of recipe results...
 */
 
+import RecipeList from "./RecipeList";
+import SearchBar from "./SearchBar";
+
 function SearchPage() {
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <h1 className="text-5xl">LandingPage component</h1>
+      <SearchBar/>
+      <RecipeList/>
     </div>
   );
 }

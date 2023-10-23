@@ -4,11 +4,87 @@
   box-sizing: border-box;
 }
 
+:root{
+    --hover-color: #e69239;;
+
 html,
 body {
   font-family: sans-serif;
 }
 
+.recipe-list {
+  background-color: #1B1107;
+}
+
+.recipe-card {
+  background-color: #DCB288;
+  ;
+}
+
+.img-bg {
+  background-color: #1B1107;
+}
+
+.recipe-card img {
+  border-color: #DCB288;
+}
+
+.recipe-card button {
+  background-color: #EFDFC5;
+}
+
+/* recipe-pop-up */
+
+.recipe-pop-up{
+  background-color:#EFDFC5;
+  color: #1B1107;
+}
+
+.recipe-pop-up h2 {
+  font-family: var(--primary-font);
+  letter-spacing: 0.2rem;
+}
+
+.recipe-pop-up h3 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 10rem;
+  letter-spacing: 0.1rem;
+  margin: 0.5rem 0rem;
+  font-family: var(--secondary-font);
+  color: var(--hover-color);
+  font-size: 1.2rem;
+}
+
+.recipe-pop-up .group {
+  margin: 1.5rem;
+}
+
+.recipe-pop-up p {
+  font-family: var(--secondary-font);
+  margin: 0.3rem;
+  text-transform: capitalize;
+  letter-spacing: 0.05rem;
+  padding: 0.2rem 0.5rem;
+}
+
+.recipe-pop-up .mealType {
+  display: flex;
+}
+
+.recipe-pop-up .mealType p {
+  background-color: #232931;
+  color: var(--hover-color);
+  padding: 1rem;
+}
+
+.recipe-pop-up a {
+  font-family: var(--secondary-font);
+  color: var(--hover-color);
+  text-decoration: none;
+  background-color: #232931;
+}
 a.active {
   font-weight: bold;
 }
