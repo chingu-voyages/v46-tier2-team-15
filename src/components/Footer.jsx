@@ -13,6 +13,7 @@ function Footer() {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
+        backgroundColor: "#1B1107",
         height: "60px",
       }}
     >
@@ -30,6 +31,7 @@ function Footer() {
             href="https://github.com/chingu-voyages/v46-tier2-team-15"
             target="_blank"
           >
+            {" "}
             V46 Team 15{" "}
           </a>
           | All Rights Reserved

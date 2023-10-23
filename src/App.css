@@ -6,7 +6,6 @@
 
 :root{
     --hover-color: #e69239;;
-}
 
 html,
 body {
@@ -85,4 +84,7 @@ body {
   color: var(--hover-color);
   text-decoration: none;
   background-color: #232931;
+}
+a.active {
+  font-weight: bold;
 }

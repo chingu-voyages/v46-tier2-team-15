@@ -3,7 +3,6 @@ This page will open as a pop up in front of the Search Page and
 it will be a page about a single recipe.
 */
 
-
 import {v4 as uuidv4}  from 'uuid';
 import {FaAngleDoubleRight} from 'react-icons/fa';
 import {RxCross1} from 'react-icons/rx'
@@ -94,3 +93,4 @@ function RecipePopUp({data ,closeRecipePopUp}) {
 }
 
 export default RecipePopUp
+
