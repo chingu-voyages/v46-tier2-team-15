@@ -2,17 +2,13 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/perspective.css";
 import "tippy.js/themes/light.css";
-import FooterBackground from "../assets/page-images/footer-background.png";
+// import FooterBackground from "../assets/page-images/footer-background.png";
 
 function Footer() {
   return (
     <div
       className="w-full flex flex-col justify-center items-center fixed bottom-0 left-0 right-0 text-white text-2xl leading-6 box-border font-bold"
       style={{
-        backgroundImage: `url(${FooterBackground})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
         backgroundColor: "#1B1107",
         height: "60px",
       }}
