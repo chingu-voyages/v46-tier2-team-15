@@ -13,16 +13,9 @@ import SearchBar from "./SearchBar";
 function LandingPage() {
   return (
     <div className="w-full flex flex-col justify-center items-center">
-      {/* <h1 className="text-5xl">LandingPage component</h1> */}
-      {/* <div className="bg-black w-full p-6"> */}
       <SearchBar />
-      {/* </div> */}
-function LandingPage() {
-  return (
-    <div className="w-full flex flex-col justify-center items-center">
-      <h1 className="text-5xl">LandingPage component</h1>
-    </div>
-  );
+      </div>
+  )
 }
 
 export default LandingPage;
