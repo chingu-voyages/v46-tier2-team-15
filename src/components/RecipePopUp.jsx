@@ -8,15 +8,13 @@ import {FaAngleDoubleRight} from 'react-icons/fa';
 import {RxCross1} from 'react-icons/rx'
 import '../App.css'
 
-
-
 function RecipePopUp({data ,closeRecipePopUp}) {
    if(data){
     // console.log(data)
     const {label , mealType , ingredients , totalNutrients , url} = data;
     const nutrientArray = Object.values(totalNutrients)
     return (
-    <div className="recipe-pop-up w-[50vw] h-auto absolute top-28 p-6 rounded-lg ">
+    <div className="recipe-pop-up top-4">
         <button onClick={() => closeRecipePopUp()} className='exit-btn text-2xl absolute right-6 top-6 bg-transparent border-none outline-none cursor-pointer'>
         <RxCross1/>
         </button>
@@ -66,7 +64,6 @@ function RecipePopUp({data ,closeRecipePopUp}) {
             return <p className='nutrient p-[0.2rem]' key={id}>{nutrient.label}</p>
         })}
         </div>
-        
       </div>
       :
       <div className="group Nutrients">
