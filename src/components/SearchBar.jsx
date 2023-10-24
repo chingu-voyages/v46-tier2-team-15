@@ -23,8 +23,9 @@ const SearchBar = () => {
     setQuery(e.target.value);
   };
 
+
   return (
-    <div className="mb-3 w-[95%] mx-auto">
+    <div className="mb-3 w-full mx-auto">
       <form
         className="relative mb-4 flex w-full flex-wrap items-stretch"
         onSubmit={searchQuery}
