@@ -7,6 +7,8 @@ import React from "react";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa6";
+import { FaSquareInstagram } from "react-icons/fa6";
 
 import { FaHome } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
@@ -14,7 +16,7 @@ import { FaUserGraduate } from "react-icons/fa6";
 import { FaBriefcase } from "react-icons/fa6";
 import { FaAddressBook } from "react-icons/fa6";
 
-function AppTeamMember() {
+function AppTeamMember({ teamMember }) {
   const [expand, setExpand] = React.useState(false);
   const [memberInfo, setMemberInfo] = React.useState("home");
   function toggleExpand() {
@@ -23,6 +25,8 @@ function AppTeamMember() {
   }
 
   const transition = "";
+
+  console.log(teamMember.aboutMe);
 
   return (
     <div
@@ -47,10 +51,7 @@ function AppTeamMember() {
             className={`${transition} mx-auto my-[20%] w-3/5 relative top-[-50%] border-[#DCB288] 
             ${expand ? "border-8" : "border-4"}`}
           >
-            <img
-              src="src\assets\contributors_photos\Drazen_Drinic.jpeg"
-              alt="App team member portrait photo"
-            />
+            <img src={teamMember.photo} alt="App team member portrait photo" />
           </div>
         </div>
 
@@ -62,12 +63,12 @@ function AppTeamMember() {
             className={`${transition} font-bold 
             ${expand ? "text-4xl mt-2" : "text-xl"}`}
           >
-            Drazen Drinic
+            {teamMember.name}
           </h2>
           <h3
             className={`${transition} ${expand ? "text-xl mt-2" : "text-xs"}`}
           >
-            Web Developer
+            {teamMember.role}
           </h3>
           <ul
             className={`${transition} flex justify-center w-full 
@@ -142,7 +143,7 @@ function AppTeamMember() {
 
         <div className={`${transition} px-8 h-[100%] ${expand ? "" : ""}`}>
           {memberInfo === "home" ? <Home /> : ""}
-          {memberInfo === "about" ? <About /> : ""}
+          {memberInfo === "about" ? <About teamMember={teamMember} /> : ""}
           {memberInfo === "education" ? <Education /> : ""}
           {memberInfo === "work" ? <Work /> : ""}
           {memberInfo === "contact" ? <Contact /> : ""}
@@ -152,7 +153,7 @@ function AppTeamMember() {
   );
 }
 
-function Home({ transition, expand }) {
+function Home({ transition, expand, teamMember }) {
   return (
     <div
       className={`${transition} w-full h-[100%] px-16 py-10 flex flex-col justify-center text-[#DCB288] text-3xl 
@@ -173,7 +174,7 @@ function Home({ transition, expand }) {
     </div>
   );
 }
-function About({ transition, expand }) {
+function About({ transition, expand, teamMember }) {
   return (
     <div
       className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
@@ -188,18 +189,19 @@ function About({ transition, expand }) {
         className={`${transition} w-full flex justify-between 
         ${expand ? "" : ""}`}
       >
-        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
-          exercitationem voluptates quo dolorem consequatur id, itaque,
-          doloribus quam dolorum ut consectetur.
+        <p
+          className={`${transition} mt-6 text-xl whitespace-pre-line ${
+            expand ? "" : ""
+          }`}
+        >
+          {teamMember.aboutMe}
         </p>
       </div>
       <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
     </div>
   );
 }
-function Education({ transition, expand }) {
+function Education({ transition, expand, teamMember }) {
   return (
     <div
       className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
@@ -225,7 +227,7 @@ function Education({ transition, expand }) {
     </div>
   );
 }
-function Work({ transition, expand }) {
+function Work({ transition, expand, teamMember }) {
   return (
     <div
       className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
@@ -251,7 +253,7 @@ function Work({ transition, expand }) {
     </div>
   );
 }
-function Contact({ transition, expand }) {
+function Contact({ transition, expand, teamMember }) {
   return (
     <div
       className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
