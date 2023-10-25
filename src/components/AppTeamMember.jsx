@@ -22,31 +22,30 @@ function AppTeamMember() {
     setMemberInfo("home");
   }
 
+  const transition = "";
+
   return (
     <div
-      className={
-        expand
-          ? "flex w-full h-[100%] transition-all duration-500"
-          : "flex flex-col transition-all duration-500"
-      }
+      className={`${transition} flex   
+      ${expand ? "w-full h-[100%]" : "flex-col"}`}
     >
       {/* Small card */}
       <div
-        className={
-          (expand
-            ? "flex flex-col w-[25%] h-full border-8"
-            : "flex flex-col w-[12rem] h-[18rem] border-4") +
-          " bg-[#DCB288] border-[#DCB288] "
-        }
+        className={`${transition} flex flex-col bg-[#DCB288] border-[#DCB288]   
+        ${
+          expand ? " w-[25%] h-full border-8" : "w-[12rem] h-[18rem] border-4"
+        }`}
       >
-        <div className="w-full bg-[#DCB288]">
+        <div
+          className={`${transition} w-full bg-[#DCB288] ${expand ? "" : ""}`}
+        >
           {/*  */}
-          <div className="h-[50%] bg-[#1B1107] "></div>
           <div
-            className={
-              (expand ? "border-8" : "border-4") +
-              " mx-auto my-[20%] w-3/5 relative top-[-50%] border-[#DCB288]"
-            }
+            className={`${transition} h-[50%] bg-[#1B1107] ${expand ? "" : ""}`}
+          ></div>
+          <div
+            className={`${transition} mx-auto my-[20%] w-3/5 relative top-[-50%] border-[#DCB288] 
+            ${expand ? "border-8" : "border-4"}`}
           >
             <img
               src="src\assets\contributors_photos\Drazen_Drinic.jpeg"
@@ -55,87 +54,93 @@ function AppTeamMember() {
           </div>
         </div>
 
-        <div className="h-full m-2 mt-[-15%] flex flex-col items-center bg-[#DCB288]">
+        <div
+          className={`${transition} h-full m-2 mt-[-15%] flex flex-col items-center bg-[#DCB288] 
+          ${expand ? "" : ""}`}
+        >
           <h2
-            className={(expand ? "text-4xl mt-2" : "text-xl") + " font-bold "}
+            className={`${transition} font-bold 
+            ${expand ? "text-4xl mt-2" : "text-xl"}`}
           >
             Drazen Drinic
           </h2>
-          <h3 className={(expand ? "text-xl mt-2" : "text-xs") + " "}>
+          <h3
+            className={`${transition} ${expand ? "text-xl mt-2" : "text-xs"}`}
+          >
             Web Developer
           </h3>
           <ul
-            className={
-              (expand ? "text-2xl mt-2" : "text-s") +
-              " flex justify-center w-full  "
-            }
+            className={`${transition} flex justify-center w-full 
+            ${expand ? "text-2xl mt-2" : "text-s"}`}
           >
-            <li className="m-2">
+            <li className={`${transition} m-2 ${expand ? "" : ""}`}>
               <FaLinkedinIn />
             </li>
-            <li className="m-2">
+            <li className={`${transition} m-2 ${expand ? "" : ""}`}>
               <FaFacebookF />
             </li>
-            <li className="m-2">
+            <li className={`${transition} m-2 ${expand ? "" : ""}`}>
               <FaTwitter />
             </li>
           </ul>
         </div>
         <button
           onClick={toggleExpand}
-          className={
-            (expand
-              ? "px-4 py-2 border-4 text-2xl"
-              : "px-2 py-1 border-2 text-s") +
-            " w-full   bg-[#C7AC8F] border-[#1B1107] "
-          }
+          className={`${transition} w-full   bg-[#C7AC8F] border-[#1B1107] 
+          ${
+            expand ? "px-4 py-2 border-4 text-2xl" : "px-2 py-1 border-2 text-s"
+          }`}
         >
           {expand ? "Collapse" : "Expand"}
         </button>
       </div>
       {/* Right big card */}
       <div
-        className={
-          (expand ? "w-[75%] h-[100%] " : "hidden") +
-          " bg-[#1B1107] border-[#DCB288] border-8 border-l-0 flex flex-col"
-        }
+        className={`${transition} bg-[#1B1107] border-[#DCB288] border-8 border-l-0 flex flex-col 
+        ${expand ? "w-[75%] h-[100%] delay-300 visible" : "delay-0 hidden"}`}
       >
-        <nav className="w-full flex justify-center p-4 text-[#DCB288] text-3xl">
-          <ul className="flex justify-around w-[60%]  ">
+        <nav
+          className={`${transition} w-full flex justify-center p-4 text-[#DCB288] text-3xl 
+          ${expand ? "" : ""}`}
+        >
+          <ul
+            className={`${transition} flex justify-around w-[60%] 
+            ${expand ? "" : ""}`}
+          >
             <li
               onClick={() => setMemberInfo("home")}
-              className="cursor-pointer p-2"
+              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
             >
               <FaHome />
             </li>
             <li
               onClick={() => setMemberInfo("about")}
-              className="cursor-pointer p-2"
+              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
             >
               <FaUser />
             </li>
             <li
               onClick={() => setMemberInfo("education")}
-              className="cursor-pointer p-2"
+              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
             >
               <FaUserGraduate />
             </li>
             <li
               onClick={() => setMemberInfo("work")}
-              className="cursor-pointer p-2"
+              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
             >
               <FaBriefcase />
             </li>
             <li
               onClick={() => setMemberInfo("contact")}
-              className="cursor-pointer p-2"
+              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
             >
               <FaAddressBook />
             </li>
           </ul>
         </nav>
 
-        <div className="px-8 h-[100%]">
+        <div className={`${transition} px-8 h-[100%] ${expand ? "" : ""}`}>
           {memberInfo === "home" ? <Home /> : ""}
           {memberInfo === "about" ? <About /> : ""}
           {memberInfo === "education" ? <Education /> : ""}
@@ -147,64 +152,128 @@ function AppTeamMember() {
   );
 }
 
-function Home() {
+function Home({ transition, expand }) {
   return (
-    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
-      <h2 className="text-center text-5xl font-extrabold">Drazen Drinic</h2>
-      <h3 className="text-center text-3xl font-extralight mt-4">
+    <div
+      className={`${transition} w-full h-[100%] px-16 py-10 flex flex-col justify-center text-[#DCB288] text-3xl 
+      ${expand ? "" : ""}`}
+    >
+      <h2
+        className={`${transition} text-center text-5xl font-extrabold
+        ${expand ? "" : ""}`}
+      >
+        Drazen Drinic
+      </h2>
+      <h3
+        className={`${transition} text-center text-3xl font-extralight mt-4
+        ${expand ? "" : ""}`}
+      >
         Web Developer
       </h3>
     </div>
   );
 }
-function About() {
+function About({ transition, expand }) {
   return (
-    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">About Me</h2>
-      <div className="w-full flex justify-between ">
-        <p className="mt-6 text-xl w-[65%]">
+    <div
+      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
+      ${expand ? "" : ""}`}
+    >
+      <h2
+        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
+      >
+        About Me
+      </h2>
+      <div
+        className={`${transition} w-full flex justify-between 
+        ${expand ? "" : ""}`}
+      >
+        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
           assumenda sed enim nisi odio? Repellendus placeat dicta labore,
           exercitationem voluptates quo dolorem consequatur id, itaque,
           doloribus quam dolorum ut consectetur.
         </p>
-        <ul className="text-xl mt-4 ">
-          <li>
-            <span className="text-[#FD5A5B]">Age:</span> 36
-          </li>
-          <li>
-            <span className="text-[#FD5A5B]">Residence:</span> BIH
-          </li>
-          <li>
-            <span className="text-[#FD5A5B]">e-mail:</span> somename@gmail.com
-          </li>
-          <li>
-            <span className="text-[#FD5A5B]">Phone:</span> +387 65 555 555
-          </li>
-        </ul>
       </div>
-      <div className="w-full"></div>
+      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
     </div>
   );
 }
-function Education() {
+function Education({ transition, expand }) {
   return (
-    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">Education</h2>
+    <div
+      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
+      ${expand ? "" : ""}`}
+    >
+      <h2
+        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
+      >
+        Education
+      </h2>
+      <div
+        className={`${transition} w-full flex justify-between 
+        ${expand ? "" : ""}`}
+      >
+        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
+          exercitationem voluptates quo dolorem consequatur id, itaque,
+          doloribus quam dolorum ut consectetur.
+        </p>
+      </div>
+      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
     </div>
   );
 }
-function Work() {
+function Work({ transition, expand }) {
   return (
-    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">Work</h2>
+    <div
+      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
+      ${expand ? "" : ""}`}
+    >
+      <h2
+        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
+      >
+        Work
+      </h2>
+      <div
+        className={`${transition} w-full flex justify-between 
+        ${expand ? "" : ""}`}
+      >
+        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
+          exercitationem voluptates quo dolorem consequatur id, itaque,
+          doloribus quam dolorum ut consectetur.
+        </p>
+      </div>
+      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
     </div>
   );
 }
-function Contact() {
+function Contact({ transition, expand }) {
   return (
-    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">Contact</h2>
+    <div
+      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
+      ${expand ? "" : ""}`}
+    >
+      <h2
+        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
+      >
+        Contact
+      </h2>
+      <div
+        className={`${transition} w-full flex justify-between 
+        ${expand ? "" : ""}`}
+      >
+        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
+          exercitationem voluptates quo dolorem consequatur id, itaque,
+          doloribus quam dolorum ut consectetur.
+        </p>
+      </div>
+      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
     </div>
   );
 }
