@@ -12,10 +12,10 @@ import SearchBar from "./SearchBar";
 
 function LandingPage() {
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full h-[100%] flex flex-col justify-center items-center">
       <SearchBar />
-      </div>
-  )
+    </div>
+  );
 }
 
 export default LandingPage;

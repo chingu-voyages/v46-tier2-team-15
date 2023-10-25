@@ -7,7 +7,7 @@ import "tippy.js/themes/light.css";
 function Footer() {
   return (
     <div
-      className="w-full flex flex-col justify-center items-center fixed bottom-0 left-0 right-0 text-white text-2xl leading-6 box-border font-bold"
+      className="w-full flex flex-col justify-center items-center relative bottom-0 left-0 right-0 text-white text-2xl leading-6 box-border font-bold"
       style={{
         backgroundColor: "#1B1107",
         height: "60px",

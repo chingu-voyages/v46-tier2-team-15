@@ -12,10 +12,10 @@ import SearchBar from "./SearchBar";
 
 function SearchPage() {
   return (
-    <div className="w-full flex flex-col justify-center items-center">
+    <div className="w-full h-[100%] flex flex-col justify-center items-center">
       <h1 className="text-5xl">LandingPage component</h1>
-      <SearchBar/>
-      <RecipeList/>
+      <SearchBar />
+      <RecipeList />
     </div>
   );
 }
