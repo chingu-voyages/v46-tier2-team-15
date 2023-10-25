@@ -134,11 +134,14 @@ function AppTeamMember() {
             </li>
           </ul>
         </nav>
-        {memberInfo === "home" ? <Home /> : ""}
-        {memberInfo === "about" ? <About /> : ""}
-        {memberInfo === "education" ? <Education /> : ""}
-        {memberInfo === "work" ? <Work /> : ""}
-        {memberInfo === "contact" ? <Contact /> : ""}
+
+        <div className="px-8 h-[100%]">
+          {memberInfo === "home" ? <Home /> : ""}
+          {memberInfo === "about" ? <About /> : ""}
+          {memberInfo === "education" ? <Education /> : ""}
+          {memberInfo === "work" ? <Work /> : ""}
+          {memberInfo === "contact" ? <Contact /> : ""}
+        </div>
       </div>
     </div>
   );
@@ -156,29 +159,52 @@ function Home() {
 }
 function About() {
   return (
-    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
-      <h2 className="text-center text-5xl font-extrabold">About</h2>
+    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">About Me</h2>
+      <div className="w-full flex justify-between ">
+        <p className="mt-6 text-xl w-[65%]">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
+          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
+          exercitationem voluptates quo dolorem consequatur id, itaque,
+          doloribus quam dolorum ut consectetur.
+        </p>
+        <ul className="text-xl mt-4 ">
+          <li>
+            <span className="text-[#FD5A5B]">Age:</span> 36
+          </li>
+          <li>
+            <span className="text-[#FD5A5B]">Residence:</span> BIH
+          </li>
+          <li>
+            <span className="text-[#FD5A5B]">e-mail:</span> somename@gmail.com
+          </li>
+          <li>
+            <span className="text-[#FD5A5B]">Phone:</span> +387 65 555 555
+          </li>
+        </ul>
+      </div>
+      <div className="w-full"></div>
     </div>
   );
 }
 function Education() {
   return (
-    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
-      <h2 className="text-center text-5xl font-extrabold">Education</h2>
+    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">Education</h2>
     </div>
   );
 }
 function Work() {
   return (
-    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
-      <h2 className="text-center text-5xl font-extrabold">Work</h2>
+    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">Work</h2>
     </div>
   );
 }
 function Contact() {
   return (
-    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
-      <h2 className="text-center text-5xl font-extrabold">Contact</h2>
+    <div className="w-full  h-[100%] p-4 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">Contact</h2>
     </div>
   );
 }
