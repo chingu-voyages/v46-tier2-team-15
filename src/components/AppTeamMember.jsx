@@ -16,22 +16,23 @@ import { FaUserGraduate } from "react-icons/fa6";
 import { FaBriefcase } from "react-icons/fa6";
 import { FaAddressBook } from "react-icons/fa6";
 
-function AppTeamMember({ teamMember }) {
+function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
   const [expand, setExpand] = React.useState(false);
   const [memberInfo, setMemberInfo] = React.useState("home");
+  const transition = "";
   function toggleExpand() {
     setExpand((prevState) => !prevState);
     setMemberInfo("home");
+    toggleVisibility();
   }
 
-  const transition = "";
-
-  console.log(teamMember.aboutMe);
+  console.log(teamMember);
 
   return (
     <div
-      className={`${transition} flex   
-      ${expand ? "w-full h-[100%]" : "flex-col"}`}
+      className={`${transition} flex 
+      ${expand ? "w-full h-[100%] " : "flex-col "} 
+      ${visibility ? "visible " : expand ? "visible" : "hidden"}`}
     >
       {/* Small card */}
       <div
@@ -74,15 +75,9 @@ function AppTeamMember({ teamMember }) {
             className={`${transition} flex justify-center w-full 
             ${expand ? "text-2xl mt-2" : "text-s"}`}
           >
-            <li className={`${transition} m-2 ${expand ? "" : ""}`}>
-              <FaLinkedinIn />
-            </li>
-            <li className={`${transition} m-2 ${expand ? "" : ""}`}>
-              <FaFacebookF />
-            </li>
-            <li className={`${transition} m-2 ${expand ? "" : ""}`}>
-              <FaTwitter />
-            </li>
+            {teamMember.socialMedia.map((sc) => (
+              <li key={sc.key}></li>
+            ))}
           </ul>
         </div>
         <button
