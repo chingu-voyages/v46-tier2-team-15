@@ -16,8 +16,10 @@ import { FaAddressBook } from "react-icons/fa6";
 
 function AppTeamMember() {
   const [expand, setExpand] = React.useState(false);
+  const [memberInfo, setMemberInfo] = React.useState("home");
   function toggleExpand() {
     setExpand((prevState) => !prevState);
+    setMemberInfo("home");
   }
 
   return (
@@ -98,32 +100,85 @@ function AppTeamMember() {
           " bg-[#1B1107] border-[#DCB288] border-8 border-l-0 flex flex-col"
         }
       >
-        <nav className="w-full flex justify-center p-8 text-[#DCB288] text-3xl">
+        <nav className="w-full flex justify-center p-4 text-[#DCB288] text-3xl">
           <ul className="flex justify-around w-[60%]  ">
-            <li>
+            <li
+              onClick={() => setMemberInfo("home")}
+              className="cursor-pointer p-2"
+            >
               <FaHome />
             </li>
-            <li>
+            <li
+              onClick={() => setMemberInfo("about")}
+              className="cursor-pointer p-2"
+            >
               <FaUser />
             </li>
-            <li>
+            <li
+              onClick={() => setMemberInfo("education")}
+              className="cursor-pointer p-2"
+            >
               <FaUserGraduate />
             </li>
-            <li>
+            <li
+              onClick={() => setMemberInfo("work")}
+              className="cursor-pointer p-2"
+            >
               <FaBriefcase />
             </li>
-            <li>
+            <li
+              onClick={() => setMemberInfo("contact")}
+              className="cursor-pointer p-2"
+            >
               <FaAddressBook />
             </li>
           </ul>
         </nav>
-        <div className="w-full h-[100%] mt-[-10%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
-          <h2 className="text-center text-5xl font-extrabold">Drazen Drinic</h2>
-          <h3 className="text-center text-3xl font-extralight mt-4">
-            Web Developer
-          </h3>
-        </div>
+        {memberInfo === "home" ? <Home /> : ""}
+        {memberInfo === "about" ? <About /> : ""}
+        {memberInfo === "education" ? <Education /> : ""}
+        {memberInfo === "work" ? <Work /> : ""}
+        {memberInfo === "contact" ? <Contact /> : ""}
       </div>
+    </div>
+  );
+}
+
+function Home() {
+  return (
+    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
+      <h2 className="text-center text-5xl font-extrabold">Drazen Drinic</h2>
+      <h3 className="text-center text-3xl font-extralight mt-4">
+        Web Developer
+      </h3>
+    </div>
+  );
+}
+function About() {
+  return (
+    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
+      <h2 className="text-center text-5xl font-extrabold">About</h2>
+    </div>
+  );
+}
+function Education() {
+  return (
+    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
+      <h2 className="text-center text-5xl font-extrabold">Education</h2>
+    </div>
+  );
+}
+function Work() {
+  return (
+    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
+      <h2 className="text-center text-5xl font-extrabold">Work</h2>
+    </div>
+  );
+}
+function Contact() {
+  return (
+    <div className="w-full h-[100%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
+      <h2 className="text-center text-5xl font-extrabold">Contact</h2>
     </div>
   );
 }
