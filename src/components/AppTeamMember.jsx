@@ -8,6 +8,12 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa6";
 
+import { FaHome } from "react-icons/fa";
+import { FaUser } from "react-icons/fa6";
+import { FaUserGraduate } from "react-icons/fa6";
+import { FaBriefcase } from "react-icons/fa6";
+import { FaAddressBook } from "react-icons/fa6";
+
 function AppTeamMember() {
   const [expand, setExpand] = React.useState(false);
   function toggleExpand() {
@@ -88,10 +94,36 @@ function AppTeamMember() {
       {/* Right big card */}
       <div
         className={
-          (expand ? "w-[75%] h-[100%] " : "invisible") +
-          " bg-[#1B1107] border-[#DCB288] border-8 border-l-0"
+          (expand ? "w-[75%] h-[100%] " : "hidden") +
+          " bg-[#1B1107] border-[#DCB288] border-8 border-l-0 flex flex-col"
         }
-      ></div>
+      >
+        <nav className="w-full flex justify-center p-8 text-[#DCB288] text-3xl">
+          <ul className="flex justify-around w-[60%]  ">
+            <li>
+              <FaHome />
+            </li>
+            <li>
+              <FaUser />
+            </li>
+            <li>
+              <FaUserGraduate />
+            </li>
+            <li>
+              <FaBriefcase />
+            </li>
+            <li>
+              <FaAddressBook />
+            </li>
+          </ul>
+        </nav>
+        <div className="w-full h-[100%] mt-[-10%] p-4 flex flex-col justify-center text-[#DCB288] text-3xl">
+          <h2 className="text-center text-5xl font-extrabold">Drazen Drinic</h2>
+          <h3 className="text-center text-3xl font-extralight mt-4">
+            Web Developer
+          </h3>
+        </div>
+      </div>
     </div>
   );
 }
