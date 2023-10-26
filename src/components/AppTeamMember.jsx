@@ -25,7 +25,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
   return (
     <div
       className={`${transition} flex 
-      ${expand ? "w-full h-[100%] " : "flex-col m-4"} 
+      ${expand ? "w-full h-[100%] " : "flex-col m-3"} 
       ${visibility ? "visible " : expand ? "visible" : "hidden"}`}
     >
       {/* Small card */}
