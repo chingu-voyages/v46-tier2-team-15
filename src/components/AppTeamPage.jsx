@@ -5,7 +5,7 @@ it will be a page about team members who created the Dish Dive App.
 import React from "react";
 
 import AppTeamMember from "./AppTeamMember";
-import contributors from "../assets/contributors";
+import contributors from "../../public/assets/contributors";
 
 function AppTeamPage() {
   const [visibility, setVisibility] = React.useState(true);
