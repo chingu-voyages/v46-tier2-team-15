@@ -4,12 +4,6 @@ it will be a page about a team member.
 */
 import React from "react";
 
-import { FaLinkedinIn } from "react-icons/fa6";
-import { FaFacebookF } from "react-icons/fa6";
-import { FaTwitter } from "react-icons/fa6";
-import { FaGithub } from "react-icons/fa6";
-import { FaSquareInstagram } from "react-icons/fa6";
-
 import { FaHome } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
 import { FaUserGraduate } from "react-icons/fa6";
@@ -31,7 +25,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
   return (
     <div
       className={`${transition} flex 
-      ${expand ? "w-full h-[100%] " : "flex-col "} 
+      ${expand ? "w-full h-[100%] " : "flex-col m-4"} 
       ${visibility ? "visible " : expand ? "visible" : "hidden"}`}
     >
       {/* Small card */}
@@ -76,7 +70,19 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
             ${expand ? "text-2xl mt-2" : "text-s"}`}
           >
             {teamMember.socialMedia.map((sc) => (
-              <li key={sc.key}></li>
+              <li
+                className={`${transition} 
+              ${expand ? "p-2" : "p-1 pt-2"}`}
+              >
+                <a href={sc.link} target="_blank">
+                  <img
+                    className={`${transition} hover:color-[#FD5A5B] 
+                    ${expand ? "h-[28px]" : "h-[16px]"}`}
+                    src={sc.icon}
+                    alt={sc.key}
+                  />
+                </a>
+              </li>
             ))}
           </ul>
         </div>

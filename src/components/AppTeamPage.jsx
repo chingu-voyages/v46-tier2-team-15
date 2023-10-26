@@ -9,14 +9,17 @@ import contributors from "../assets/contributors";
 
 function AppTeamPage() {
   const [visibility, setVisibility] = React.useState(true);
+  const [expand, setExpand] = React.useState(false);
   return (
-    <div className="w-full h-[100%] flex flex-col justify-center items-center bg-[#1B1107] px-[120px]">
+    <div className="w-full h-[100%] flex justify-around items-center flex-wrap bg-[#1B1107] px-[120px]">
       {contributors.map((teamMember) => (
         <AppTeamMember
           key={teamMember.name}
           teamMember={teamMember}
           toggleVisibility={() => setVisibility((prevState) => !prevState)}
           visibility={visibility}
+          expand={expand}
+          setExpand={setExpand}
         />
       ))}
     </div>
