@@ -143,11 +143,15 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
         </nav>
 
         <div className={`${transition} px-8 h-[100%] ${expand ? "" : ""}`}>
-          {memberInfo === "home" ? <Home /> : ""}
+          {memberInfo === "home" ? <Home teamMember={teamMember} /> : ""}
           {memberInfo === "about" ? <About teamMember={teamMember} /> : ""}
-          {memberInfo === "education" ? <Education /> : ""}
-          {memberInfo === "work" ? <Work /> : ""}
-          {memberInfo === "contact" ? <Contact /> : ""}
+          {memberInfo === "education" ? (
+            <Education teamMember={teamMember} />
+          ) : (
+            ""
+          )}
+          {memberInfo === "work" ? <Work teamMember={teamMember} /> : ""}
+          {memberInfo === "contact" ? <Contact teamMember={teamMember} /> : ""}
         </div>
       </div>
     </div>
@@ -164,13 +168,13 @@ function Home({ transition, expand, teamMember }) {
         className={`${transition} text-center text-5xl font-extrabold
         ${expand ? "" : ""}`}
       >
-        Drazen Drinic
+        {teamMember.name}
       </h2>
       <h3
         className={`${transition} text-center text-3xl font-extralight mt-4
         ${expand ? "" : ""}`}
       >
-        Web Developer
+        {teamMember.role}
       </h3>
     </div>
   );
