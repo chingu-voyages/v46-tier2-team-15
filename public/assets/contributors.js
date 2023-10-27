@@ -210,7 +210,7 @@ const contributors = [
 
   {
     name: "Sadik Shaikh",
-    photo: "./assets/contributors_photos/Sadik_Shaikh",
+    photo: "./assets/contributors_photos/Sadik_Shaikh.jpeg",
     role: "Web Developer",
     aboutMe:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
@@ -221,37 +221,16 @@ const contributors = [
       //GitHub
       {
         key: "GitHub",
-        name: "",
-        link: "",
+        name: "abdullahsadik00",
+        link: "https://github.com/abdullahsadik00",
         icon: "./assets/font_awesome_icons/github.svg",
       },
       //Linkedin
       {
         key: "LinkedIn",
-        name: "Drazen Drinic",
-        link: "https://www.linkedin.com/in/drazendrinic/",
+        name: "Shaikh Sadik",
+        link: "https://www.linkedin.com/in/shaikh-sadik/",
         icon: "./assets/font_awesome_icons/linkedin-in.svg",
-      },
-      //Facebook
-      {
-        key: "Facebook",
-        name: "Drazen Drinic",
-        link: "https://www.facebook.com/drazen.drinic/",
-        icon: "./assets/font_awesome_icons/facebook-f.svg",
-      },
-      //Instagram
-      {
-        key: "Instagram",
-        name: "drazen.drinic",
-        link: "https://www.instagram.com/drazen.drinic/",
-        icon: "./assets/font_awesome_icons/instagram.svg",
-      },
-      //Twitter
-      {
-        key: "Twiter",
-        name: "@Drazen_TheGRC",
-        link: "https://twitter.com/Drazen_TheGRC",
-        icon: "./assets/font_awesome_icons/twitter.svg",
       },
     ],
   },

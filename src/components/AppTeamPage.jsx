@@ -9,6 +9,17 @@ import contributors from "../../public/assets/contributors";
 
 function AppTeamPage() {
   const [visibility, setVisibility] = React.useState(true);
+  const teamMembers = contributors.sort((a, b) => {
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  });
 
   return (
     <div className="w-full h-[100%] flex flex-col bg-[#1B1107] px-[120px]">
@@ -27,7 +38,7 @@ function AppTeamPage() {
         className={`w-full flex flex-wrap justify-around  
         ${visibility ? "visible " : "h-[100%]"}`}
       >
-        {contributors.map((teamMember) => (
+        {teamMembers.map((teamMember) => (
           <AppTeamMember
             key={teamMember.name}
             teamMember={teamMember}
