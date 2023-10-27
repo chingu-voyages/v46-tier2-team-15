@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import DishDiveLogoWhite from "../../public/assets/logo/DishDive_Logo_White.png";
-import SwitchBtn from "../../public/assets/page-images/Switch.svg";
-import Line from "../../public/assets/page-images/Line.svg";
+import DishDiveLogoWhite from "../assets/logo/DishDive_Logo_White.png";
+import SwitchBtn from "../assets/page-images/Switch.svg";
+import Line from "../assets/page-images/Line.svg";
 
 function Header() {
   return (
