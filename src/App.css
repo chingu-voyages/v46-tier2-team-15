@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 
-:root{
-    --hover-color: #e69239;
+:root {
+  --hover-color: #e69239;
 }
 
 html,
@@ -14,27 +14,26 @@ body {
 }
 
 .recipe-card {
-  background-color: #DCB288;
-  ;
+  background-color: #dcb288;
 }
 
 .img-bg {
-  background-color: #1B1107;
+  background-color: #1b1107;
 }
 
 .recipe-card img {
-  border-color: #DCB288;
+  border-color: #dcb288;
 }
 
 .recipe-card button {
-  background-color: #EFDFC5;
+  background-color: #efdfc5;
 }
 
 /* recipe-pop-up */
 
-.recipe-pop-up{
-  background-color:#EFDFC5;
-  color: #1B1107;
+.recipe-pop-up {
+  background-color: #efdfc5;
+  color: #1b1107;
   overflow-y: scroll;
   height: 70vh;
   width: 60vw;
@@ -88,57 +87,55 @@ body {
 }
 a.active {
   font-weight: bold;
+  border-bottom: 1px solid #fff;
 }
-
 
 /* pagination */
 
-.list-and-pagination{
+.list-and-pagination {
   margin-bottom: 5rem;
-  background-color: #1B1107;
   padding: 1rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  position: relative;
+  width: 100%;
 }
 
-.paginationBtns{
+.paginationBtns {
   display: flex;
   width: 30vw;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding: 0.5rem;
-  height: 4rem;
 }
 
-.paginationBtns li{
+.paginationBtns li {
   list-style: none;
   color: #232931;
   background-color: #e69239;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
   letter-spacing: 0.05rem;
 }
 
-.paginationBtns li:hover{
+.paginationBtns li:hover {
   background-color: #232931;
   color: #e69239;
 }
 
-@media only screen and (max-width:1020px) {
+.paginationBtns li a {
+  padding: 1rem;
+  line-height: 42px;
+  cursor: pointer;
+}
 
+@media only screen and (max-width: 1020px) {
   .recipe-pop-up {
     width: 70vw;
     height: 80vh;
   }
-
 }
 
-@media only screen and (max-width:860px) {
-
+@media only screen and (max-width: 860px) {
   .recipe-pop-up {
     width: 85vw;
     height: 100vh;
@@ -153,19 +150,12 @@ a.active {
     font-size: 1rem;
     letter-spacing: 0.15rem;
   }
-
 }
 
-@media only screen and (max-width:560px) {
-
+@media only screen and (max-width: 560px) {
   .recipe-pop-up {
     width: 85vw;
     height: 100vh;
     padding: 0.5rem 0rem;
   }
-
 }
-
-
-
-
