@@ -20,6 +20,7 @@ const contributors = [
       "Creativity",
       "Critical thinking",
     ],
+
     discordName: "DarshanDev10",
     socialMedia: [
       //GitHub
@@ -60,6 +61,20 @@ const contributors = [
       "Communication",
       "Customer Service",
     ],
+    work: [
+      {
+        title: "",
+        companyName: "",
+        employmentType: "Part-Time",
+        startDate: "",
+        endDate: "",
+        location: "Bosnia and Hercegovina",
+        locationType: "Remote",
+        description: "",
+        skills: ["", "", ""],
+      },
+    ],
+    education: {},
     discordName: "Drazen-TheGRC",
     socialMedia: [
       //GitHub
