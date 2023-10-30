@@ -74,7 +74,17 @@ const contributors = [
         skills: ["", "", ""],
       },
     ],
-    education: {},
+    education: [
+      {
+        school: "",
+        degree: "",
+        fieldOfStudy: "",
+        startDate: "",
+        endDate: "",
+        grade: "",
+        description: "",
+      },
+    ],
     discordName: "Drazen-TheGRC",
     socialMedia: [
       //GitHub
