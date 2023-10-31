@@ -16,7 +16,7 @@ const SearchBar = ({ search }) => {
   return (
     <div className="mb-3 w-full mx-auto">
       <form
-        className=" mb-4 flex w-full flex-wrap items-stretch"
+        className="mb-4 flex w-full flex-wrap items-stretch"
         onSubmit={searchRecepes}
       >
         <input

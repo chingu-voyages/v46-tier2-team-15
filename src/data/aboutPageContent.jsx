@@ -7,7 +7,7 @@ export const contents = [
         text:   `Welcome to Dish Dive, your culinary 
                 sanctuary in the digital world! With 
                 a treasure trove of more than 10,000
-                recipes and a passionate team of 6,
+                recipes and a passionate team of 6 members,
                 we are here to delight your taste buds 
                 and inspire your inner chef.`,
     },
