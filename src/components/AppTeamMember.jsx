@@ -20,8 +20,6 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
     toggleVisibility();
   }
 
-  console.log(teamMember);
-
   return (
     <div
       className={`flex 
@@ -58,7 +56,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
             ${expand ? "text-2xl mt-2" : "text-s"}`}
           >
             {teamMember.socialMedia.map((sc) => (
-              <li className={`${expand ? "p-2" : "p-1 pt-2"}`}>
+              <li key={sc.key} className={`${expand ? "p-2" : "p-1 pt-2"}`}>
                 <a href={sc.link} target="_blank">
                   <img
                     className={`${expand ? "h-[28px]" : "h-[16px]"}`}
