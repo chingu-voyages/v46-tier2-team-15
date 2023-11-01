@@ -22,7 +22,7 @@ function AppTeamPage() {
   });
 
   return (
-    <div className="w-full h-[100%] flex flex-col bg-[#1B1107] px-[120px]">
+    <div className="w-full h-[100%] overflow-auto flex flex-col bg-[#1B1107] px-[120px]">
       <div className={`${visibility ? "visible " : "hidden"}`}>
         <h2 className="mb-4 text-[#DCB288] text-4xl text-center">
           The team behind the App

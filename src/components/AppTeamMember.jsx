@@ -20,14 +20,11 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
     toggleVisibility();
   }
 
-  const cardHeight = `${window.innerHeight - 230}px`;
-
   return (
     <div
-      className={`flex 
+      className={`flex h-[100%] 
       ${expand ? "w-full" : "flex-col m-3"} 
       ${visibility ? "visible " : expand ? "visible" : "hidden"}`}
-      style={{ height: cardHeight }}
     >
       {/* Small card */}
       <div
@@ -121,7 +118,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
           </ul>
         </nav>
 
-        <div className="px-8 h-[100%] overflow-auto border-4 border-red-600">
+        <div className="px-8 h-[100%] overflow-auto scrollbar-hide border-4 border-red-600">
           {memberInfo === "home" ? <Home teamMember={teamMember} /> : null}
           {memberInfo === "about" ? <About teamMember={teamMember} /> : null}
           {memberInfo === "education" ? (
