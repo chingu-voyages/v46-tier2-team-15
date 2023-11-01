@@ -137,18 +137,22 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 function Home({ teamMember }) {
   return (
     <div className="w-full h-[100%] px-16 py-10 flex flex-col justify-center text-[#DCB288] text-3xl ">
-      <h2 className="text-center text-5xl font-extrabold">{teamMember.name}</h2>
-      <h3 className="text-center text-3xl font-extralight mt-4">
-        {teamMember.role}
-      </h3>
+      <div className="w-full">
+        <h2 className="text-center text-5xl font-extrabold">
+          {teamMember.name}
+        </h2>
+        <h3 className="text-center text-3xl font-extralight mt-4">
+          {teamMember.role}
+        </h3>
+      </div>
     </div>
   );
 }
 function About({ teamMember }) {
   return (
     <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">About Me</h2>
-      <div className="w-full flex justify-between">
+      <div className="w-full">
+        <h2 className="text-4xl font-extrabold">About Me</h2>
         <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
       </div>
       <div className="w-full"></div>
@@ -158,9 +162,9 @@ function About({ teamMember }) {
 function Education({ teamMember }) {
   return (
     <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">Education</h2>
-      <div className="w-full flex justify-between">
-        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
+      <div className="w-full">
+        <h2 className="text-4xl font-extrabold">Education</h2>
+        <p className="mt-6 text-xl whitespace-pre-line"></p>
       </div>
       <div className="w-full"></div>
     </div>
@@ -169,9 +173,9 @@ function Education({ teamMember }) {
 function Work({ teamMember }) {
   return (
     <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">Work</h2>
-      <div className="w-full flex justify-between">
-        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
+      <div className="w-full">
+        <h2 className="text-4xl font-extrabold">Work</h2>
+        <p className="mt-6 text-xl whitespace-pre-line"></p>
       </div>
       <div className="w-full"></div>
     </div>
@@ -180,9 +184,9 @@ function Work({ teamMember }) {
 function Contact({ teamMember }) {
   return (
     <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
-      <h2 className="text-4xl font-extrabold">Contact</h2>
-      <div className="w-full flex justify-between">
-        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
+      <div className="w-full">
+        <h2 className="text-4xl font-extrabold">Contact</h2>
+        <p className="mt-6 text-xl whitespace-pre-line"></p>
       </div>
       <div className="w-full"></div>
     </div>
