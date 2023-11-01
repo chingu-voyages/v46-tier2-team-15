@@ -118,7 +118,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
           </ul>
         </nav>
 
-        <div className="px-8 h-[100%]">
+        <div className="px-8 h-[100%] overflow-scroll border-4 border-red-600">
           {memberInfo === "home" ? <Home teamMember={teamMember} /> : null}
           {memberInfo === "about" ? <About teamMember={teamMember} /> : null}
           {memberInfo === "education" ? (
@@ -161,12 +161,19 @@ function About({ teamMember }) {
 }
 function Education({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+    <div className="w-full h-[100%] border-4 border-blue-600 px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
       <div className="w-full">
         <h2 className="text-4xl font-extrabold">Education</h2>
         <p className="mt-6 text-xl whitespace-pre-line"></p>
       </div>
-      <div className="w-full"></div>
+      <div className="w-full">
+        <p>{teamMember.aboutMe}</p>
+        <ul>
+          {teamMember.hardSkills.map((hSkill) => (
+            <li>{hSkill}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
