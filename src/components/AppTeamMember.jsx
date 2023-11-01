@@ -24,60 +24,44 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 
   return (
     <div
-      className={`${transition} flex 
+      className={`flex 
       ${expand ? "w-full h-[100%] " : "flex-col m-3"} 
       ${visibility ? "visible " : expand ? "visible" : "hidden"}`}
     >
       {/* Small card */}
       <div
-        className={`${transition} flex flex-col bg-[#DCB288] border-[#DCB288]   
+        className={`flex flex-col bg-[#DCB288] border-[#DCB288] 
         ${
           expand ? " w-[25%] h-full border-8" : "w-[12rem] h-[18rem] border-4"
         }`}
       >
-        <div
-          className={`${transition} w-full bg-[#DCB288] ${expand ? "" : ""}`}
-        >
+        <div className="w-full bg-[#DCB288]">
           {/*  */}
+          <div className="h-[50%] bg-[#1B1107]"></div>
           <div
-            className={`${transition} h-[50%] bg-[#1B1107] ${expand ? "" : ""}`}
-          ></div>
-          <div
-            className={`${transition} mx-auto my-[20%] w-3/5 relative top-[-50%] border-[#DCB288] 
+            className={`mx-auto my-[20%] w-3/5 relative top-[-50%] border-[#DCB288] 
             ${expand ? "border-8" : "border-4"}`}
           >
             <img src={teamMember.photo} alt="App team member portrait photo" />
           </div>
         </div>
 
-        <div
-          className={`${transition} h-full m-2 mt-[-15%] flex flex-col items-center bg-[#DCB288] 
-          ${expand ? "" : ""}`}
-        >
-          <h2
-            className={`${transition} font-bold 
-            ${expand ? "text-4xl mt-2" : "text-xl"}`}
-          >
+        <div className="h-full m-2 mt-[-15%] flex flex-col items-center bg-[#DCB288]">
+          <h2 className={`font-bold ${expand ? "text-4xl mt-2" : "text-xl"}`}>
             {teamMember.name}
           </h2>
-          <h3
-            className={`${transition} ${expand ? "text-xl mt-2" : "text-xs"}`}
-          >
+          <h3 className={`${expand ? "text-xl mt-2" : "text-xs"}`}>
             {teamMember.role}
           </h3>
           <ul
-            className={`${transition} flex justify-center w-full 
+            className={`flex justify-center w-full 
             ${expand ? "text-2xl mt-2" : "text-s"}`}
           >
             {teamMember.socialMedia.map((sc) => (
-              <li
-                className={`${transition} 
-              ${expand ? "p-2" : "p-1 pt-2"}`}
-              >
+              <li className={`${expand ? "p-2" : "p-1 pt-2"}`}>
                 <a href={sc.link} target="_blank">
                   <img
-                    className={`${transition} hover:color-[#FD5A5B] 
-                    ${expand ? "h-[28px]" : "h-[16px]"}`}
+                    className={`${expand ? "h-[28px]" : "h-[16px]"}`}
                     src={sc.icon}
                     alt={sc.key}
                   />
@@ -88,7 +72,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
         </div>
         <button
           onClick={toggleExpand}
-          className={`${transition} w-full   bg-[#C7AC8F] border-[#1B1107] 
+          className={`w-full bg-[#C7AC8F] border-[#1B1107] 
           ${
             expand ? "px-4 py-2 border-4 text-2xl" : "px-2 py-1 border-2 text-s"
           }`}
@@ -98,189 +82,111 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
       </div>
       {/* Right big card */}
       <div
-        className={`${transition} bg-[#1B1107] border-[#DCB288] border-8 border-l-0 flex flex-col 
-        ${expand ? "w-[75%] h-[100%] delay-300 visible" : "delay-0 hidden"}`}
+        className={`bg-[#1B1107] border-[#DCB288] border-8 border-l-0 flex flex-col 
+        ${expand ? "w-[75%] h-[100%] visible" : " hidden"}`}
       >
-        <nav
-          className={`${transition} w-full flex justify-center p-4 text-[#DCB288] text-3xl 
-          ${expand ? "" : ""}`}
-        >
-          <ul
-            className={`${transition} flex justify-around w-[60%] 
-            ${expand ? "" : ""}`}
-          >
+        <nav className="w-full flex justify-center p-4 text-[#DCB288] text-3xl">
+          <ul className="flex justify-around w-[60%] ">
             <li
               onClick={() => setMemberInfo("home")}
-              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
+              className="cursor-pointer p-2"
             >
               <FaHome />
             </li>
             <li
               onClick={() => setMemberInfo("about")}
-              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
+              className="cursor-pointer p-2"
             >
               <FaUser />
             </li>
             <li
               onClick={() => setMemberInfo("education")}
-              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
+              className="cursor-pointer p-2"
             >
               <FaUserGraduate />
             </li>
             <li
               onClick={() => setMemberInfo("work")}
-              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
+              className="cursor-pointer p-2"
             >
               <FaBriefcase />
             </li>
             <li
               onClick={() => setMemberInfo("contact")}
-              className={`${transition} cursor-pointer p-2 ${expand ? "" : ""}`}
+              className="cursor-pointer p-2"
             >
               <FaAddressBook />
             </li>
           </ul>
         </nav>
 
-        <div className={`${transition} px-8 h-[100%] ${expand ? "" : ""}`}>
-          {memberInfo === "home" ? <Home teamMember={teamMember} /> : ""}
-          {memberInfo === "about" ? <About teamMember={teamMember} /> : ""}
+        <div className="px-8 h-[100%]">
+          {memberInfo === "home" ? <Home teamMember={teamMember} /> : null}
+          {memberInfo === "about" ? <About teamMember={teamMember} /> : null}
           {memberInfo === "education" ? (
             <Education teamMember={teamMember} />
-          ) : (
-            ""
-          )}
-          {memberInfo === "work" ? <Work teamMember={teamMember} /> : ""}
-          {memberInfo === "contact" ? <Contact teamMember={teamMember} /> : ""}
+          ) : null}
+          {memberInfo === "work" ? <Work teamMember={teamMember} /> : null}
+          {memberInfo === "contact" ? (
+            <Contact teamMember={teamMember} />
+          ) : null}
         </div>
       </div>
     </div>
   );
 }
 
-function Home({ transition, expand, teamMember }) {
+function Home({ teamMember }) {
   return (
-    <div
-      className={`${transition} w-full h-[100%] px-16 py-10 flex flex-col justify-center text-[#DCB288] text-3xl 
-      ${expand ? "" : ""}`}
-    >
-      <h2
-        className={`${transition} text-center text-5xl font-extrabold
-        ${expand ? "" : ""}`}
-      >
-        {teamMember.name}
-      </h2>
-      <h3
-        className={`${transition} text-center text-3xl font-extralight mt-4
-        ${expand ? "" : ""}`}
-      >
+    <div className="w-full h-[100%] px-16 py-10 flex flex-col justify-center text-[#DCB288] text-3xl ">
+      <h2 className="text-center text-5xl font-extrabold">{teamMember.name}</h2>
+      <h3 className="text-center text-3xl font-extralight mt-4">
         {teamMember.role}
       </h3>
     </div>
   );
 }
-function About({ transition, expand, teamMember }) {
+function About({ teamMember }) {
   return (
-    <div
-      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
-      ${expand ? "" : ""}`}
-    >
-      <h2
-        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
-      >
-        About Me
-      </h2>
-      <div
-        className={`${transition} w-full flex justify-between 
-        ${expand ? "" : ""}`}
-      >
-        <p
-          className={`${transition} mt-6 text-xl whitespace-pre-line ${
-            expand ? "" : ""
-          }`}
-        >
-          {teamMember.aboutMe}
-        </p>
+    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">About Me</h2>
+      <div className="w-full flex justify-between">
+        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
       </div>
-      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
+      <div className="w-full"></div>
     </div>
   );
 }
-function Education({ transition, expand, teamMember }) {
+function Education({ teamMember }) {
   return (
-    <div
-      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
-      ${expand ? "" : ""}`}
-    >
-      <h2
-        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
-      >
-        Education
-      </h2>
-      <div
-        className={`${transition} w-full flex justify-between 
-        ${expand ? "" : ""}`}
-      >
-        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
-          exercitationem voluptates quo dolorem consequatur id, itaque,
-          doloribus quam dolorum ut consectetur.
-        </p>
+    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">Education</h2>
+      <div className="w-full flex justify-between">
+        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
       </div>
-      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
+      <div className="w-full"></div>
     </div>
   );
 }
-function Work({ transition, expand, teamMember }) {
+function Work({ teamMember }) {
   return (
-    <div
-      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
-      ${expand ? "" : ""}`}
-    >
-      <h2
-        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
-      >
-        Work
-      </h2>
-      <div
-        className={`${transition} w-full flex justify-between 
-        ${expand ? "" : ""}`}
-      >
-        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
-          exercitationem voluptates quo dolorem consequatur id, itaque,
-          doloribus quam dolorum ut consectetur.
-        </p>
+    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">Work</h2>
+      <div className="w-full flex justify-between">
+        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
       </div>
-      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
+      <div className="w-full"></div>
     </div>
   );
 }
-function Contact({ transition, expand, teamMember }) {
+function Contact({ teamMember }) {
   return (
-    <div
-      className={`${transition} w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl 
-      ${expand ? "" : ""}`}
-    >
-      <h2
-        className={`${transition} text-4xl font-extrabold ${expand ? "" : ""}`}
-      >
-        Contact
-      </h2>
-      <div
-        className={`${transition} w-full flex justify-between 
-        ${expand ? "" : ""}`}
-      >
-        <p className={`${transition} mt-6 text-xl ${expand ? "" : ""}`}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
-          assumenda sed enim nisi odio? Repellendus placeat dicta labore,
-          exercitationem voluptates quo dolorem consequatur id, itaque,
-          doloribus quam dolorum ut consectetur.
-        </p>
+    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+      <h2 className="text-4xl font-extrabold">Contact</h2>
+      <div className="w-full flex justify-between">
+        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
       </div>
-      <div className={`${transition} w-full ${expand ? "" : ""}`}></div>
+      <div className="w-full"></div>
     </div>
   );
 }
