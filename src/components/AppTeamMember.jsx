@@ -136,7 +136,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 
 function Home({ teamMember }) {
   return (
-    <div className="w-full h-[100%] px-16 py-10 flex flex-col justify-center text-[#DCB288] text-3xl ">
+    <div className="w-full h-[100%] px-8 py-10 flex flex-col justify-center text-[#DCB288] text-3xl ">
       <div className="w-full">
         <h2 className="text-center text-5xl font-extrabold">
           {teamMember.name}
@@ -150,10 +150,12 @@ function Home({ teamMember }) {
 }
 function About({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold">About Me</h2>
-        <p className="mt-6 text-xl whitespace-pre-line">{teamMember.aboutMe}</p>
+        <h2 className="text-4xl font-extrabold px-4">About Me</h2>
+        <p className="my-4 pb-2 px-4 whitespace-pre-line">
+          {teamMember.aboutMe}
+        </p>
       </div>
       <div className="w-full"></div>
     </div>
@@ -161,9 +163,9 @@ function About({ teamMember }) {
 }
 function Education({ teamMember }) {
   return (
-    <div className="w-full h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+    <div className="w-full h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold">Education</h2>
+        <h2 className="text-4xl font-extrabold px-4">Education</h2>
         <p className="mt-6 text-xl whitespace-pre-line"></p>
       </div>
       <div className="w-full">
@@ -195,25 +197,24 @@ function Work({ teamMember }) {
 
   function getEmploymentDuration(startDate, endDate) {
     const endYearX = endDate === "Present" ? new Date() : endDate;
-
     const totalMonths =
       (endYearX.getFullYear() - startDate.getFullYear()) * 12 +
       (endYearX.getMonth() - startDate.getMonth());
-
-    // console.log(totalMonths);
     const years = parseInt(totalMonths / 12);
     const months = totalMonths % 12;
-
-    // console.log(`${years} yr ${months} mos`);
     return `${years} yr ${months} mos`;
   }
   return (
-    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold">Work</h2>
+        <h2 className="text-4xl font-extrabold px-4">Work</h2>
+
         {teamMember.work.map((job) => (
-          <div key={job.title}>
-            <h2>{job.title}</h2>
+          <div
+            className="my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
+            key={job.title}
+          >
+            <h2 className="text-xl font-bold">{job.title}</h2>
             <h3>
               <span>{job.companyName}</span>・<span>{job.employmentType}</span>
             </h3>
@@ -235,7 +236,16 @@ function Work({ teamMember }) {
             <h3>
               {job.location}・{job.locationType}
             </h3>
-            <p>{job.description}</p>
+
+            <div>
+              <p className="mt-4 whitespace-pre-line">{job.description}</p>
+              <p>
+                <span className="font-bold">Skills: </span>
+                {job.skills.map((skill) => (
+                  <span key={skill}> ・{skill}・ </span>
+                ))}
+              </p>
+            </div>
           </div>
         ))}
       </div>
@@ -245,9 +255,9 @@ function Work({ teamMember }) {
 }
 function Contact({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold">Contact</h2>
+        <h2 className="text-4xl font-extrabold px-4">Contact</h2>
         <p className="mt-6 text-xl whitespace-pre-line"></p>
       </div>
       <div className="w-full"></div>

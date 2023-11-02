@@ -74,6 +74,24 @@ const contributors = [
           'At Coding Giants, I embraced "The Protege Effect" to its fullest, immersing myself in the enriching experience of teaching others while simultaneously enhancing my own professional growth. My role involved imparting fundamental coding concepts to young learners through engaging instruction in Scratch and Minecraft. Moreover, the sheer delight of teaching Unity and C# was an exceptional experience in itself, igniting my passion for game development and programming.',
         skills: ["Front-End", "C#", "Python", "Scratch", "Unity"],
       },
+      {
+        title: "IT Consultant",
+        companyName: "The Golden Ratio Company",
+        employmentType: "Part Time",
+        startDate: new Date(2020, 12 - 1, 1),
+        endDate: "Present",
+        location: "Bosnia and Hercegovina",
+        locationType: "Hybrid",
+        description:
+          "I founded my own company in late 2020 with the goal of pursuing my passion for social and video game development. As the company's founder and developer, I am responsible for overseeing and developing various game concepts, including a board game, a social game, and several video games, as well as an exciting augmented reality (AR) game. \n\nIn addition to our current projects, I have ambitious plans for the future growth of the company. We are actively working towards developing an employee database and a business registry WebApp, aiming to have a positive impact on the local economy and foster further development. Furthermore, I aspire to expand our expertise in website and software development, leveraging our skills to deliver high-quality products and services to our clients.",
+        skills: [
+          "Organization",
+          "Business Planning",
+          "Decision-making",
+          "Vision",
+          "Adaptability",
+        ],
+      },
     ],
     education: [
       {
