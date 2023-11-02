@@ -83,7 +83,7 @@ const contributors = [
         location: "Bosnia and Hercegovina",
         locationType: "Hybrid",
         description:
-          "I founded my own company in late 2020 with the goal of pursuing my passion for social and video game development. As the company's founder and developer, I am responsible for overseeing and developing various game concepts, including a board game, a social game, and several video games, as well as an exciting augmented reality (AR) game. \n\nIn addition to our current projects, I have ambitious plans for the future growth of the company. We are actively working towards developing an employee database and a business registry WebApp, aiming to have a positive impact on the local economy and foster further development. Furthermore, I aspire to expand our expertise in website and software development, leveraging our skills to deliver high-quality products and services to our clients.",
+          "I founded my own company in late 2020 with the goal of pursuing my passion for social and video game development. As the company's founder and developer, I am responsible for overseeing and developing various game concepts, including a board game, a social game, and several video games, as well as an exciting augmented reality (AR) game. \nIn addition to our current projects, I have ambitious plans for the future growth of the company. We are actively working towards developing an employee database and a business registry WebApp, aiming to have a positive impact on the local economy and foster further development. Furthermore, I aspire to expand our expertise in website and software development, leveraging our skills to deliver high-quality products and services to our clients.",
         skills: [
           "Organization",
           "Business Planning",
@@ -95,13 +95,35 @@ const contributors = [
     ],
     education: [
       {
-        school: "",
-        degree: "",
-        fieldOfStudy: "",
-        startDate: "",
-        endDate: "",
-        grade: "",
+        degree: "Bachelor of Software Engineering",
+        schoolName: "FIMEK",
+        startDate: new Date(2022, 9 - 1, 1),
+        endDate: "Present",
+        location: "Serbia",
+        description:
+          "Upon completing bachelor academic studies in the Software Engineering study program is qualified to design, develop and implement modern software systems. Special emphasis is placed on the acquisition of generic knowledge from the design of physical architecture, system software support, inter-computer communications and architectures and algorithms, as well as on training students for the design and development of dedicated computer structures and the development of platforms and systems for working in real-time.",
+        skills: [
+          "Graphic Design",
+          "Software Planning",
+          "Software Development",
+          "Databases",
+          "Project Managment",
+        ],
+      },
+      {
+        degree: "Bachelor of Transportation",
+        schoolName: "VTS",
+        startDate: new Date(2006, 6 - 1, 1),
+        endDate: new Date(2010, 10 - 1, 1),
+        location: "Serbia",
         description: "",
+        skills: [
+          "Traffic Safety",
+          "Mobility Planning",
+          "Parking Planning",
+          "Freight Logistics",
+          "Combined Transportation",
+        ],
       },
     ],
     discordName: "Drazen-TheGRC",

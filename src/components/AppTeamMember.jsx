@@ -162,20 +162,63 @@ function About({ teamMember }) {
   );
 }
 function Education({ teamMember }) {
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   return (
-    <div className="w-full h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
       <div className="w-full">
         <h2 className="text-4xl font-extrabold px-4">Education</h2>
-        <p className="mt-6 text-xl whitespace-pre-line"></p>
+
+        {teamMember.education.map((school) => (
+          <div
+            className="my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
+            key={school.degree}
+          >
+            <h2 className="text-xl font-bold">{school.degree}</h2>
+            <h3>
+              <span>{school.schoolName}</span>・<span>{school.location}</span>
+            </h3>
+            <h3>
+              <span>
+                {month[school.startDate.getMonth()]}{" "}
+                {school.startDate.getFullYear().toString()}{" "}
+              </span>
+              {" - "}
+              <span>
+                {school.endDate === "Present"
+                  ? "Present"
+                  : month[school.endDate.getMonth()] +
+                    " " +
+                    school.endDate.getFullYear().toString()}
+              </span>
+            </h3>
+
+            <div>
+              <p className="mt-4 whitespace-pre-line">{school.description}</p>
+              <p>
+                <span className="font-bold">Skills: </span>
+                {school.skills.map((skill) => (
+                  <span key={skill}> ・{skill}・ </span>
+                ))}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
-      <div className="w-full">
-        <p>{teamMember.aboutMe}</p>
-        <ul>
-          {teamMember.hardSkills.map((hSkill) => (
-            <li key={hSkill}>{hSkill}</li>
-          ))}
-        </ul>
-      </div>
+      <div className="w-full"></div>
     </div>
   );
 }
