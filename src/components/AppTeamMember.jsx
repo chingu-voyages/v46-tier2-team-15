@@ -22,8 +22,8 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 
   return (
     <div
-      className={`flex h-[100%] 
-      ${expand ? "w-full" : "flex-col m-3"} 
+      className={`flex  
+      ${expand ? "w-full h-[100%]" : "flex-col m-3"} 
       ${visibility ? "visible " : expand ? "visible" : "hidden"}`}
     >
       {/* Small card */}
@@ -118,7 +118,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
           </ul>
         </nav>
 
-        <div className="px-8 h-[100%] overflow-auto scrollbar-hide border-4 border-red-600">
+        <div className="px-8 h-[100%] overflow-auto scrollbar-hide ">
           {memberInfo === "home" ? <Home teamMember={teamMember} /> : null}
           {memberInfo === "about" ? <About teamMember={teamMember} /> : null}
           {memberInfo === "education" ? (
@@ -170,7 +170,7 @@ function Education({ teamMember }) {
         <p>{teamMember.aboutMe}</p>
         <ul>
           {teamMember.hardSkills.map((hSkill) => (
-            <li>{hSkill}</li>
+            <li key={hSkill}>{hSkill}</li>
           ))}
         </ul>
       </div>
@@ -178,11 +178,66 @@ function Education({ teamMember }) {
   );
 }
 function Work({ teamMember }) {
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  function getEmploymentDuration(startDate, endDate) {
+    const endYearX = endDate === "Present" ? new Date() : endDate;
+
+    const totalMonths =
+      (endYearX.getFullYear() - startDate.getFullYear()) * 12 +
+      (endYearX.getMonth() - startDate.getMonth());
+
+    // console.log(totalMonths);
+    const years = parseInt(totalMonths / 12);
+    const months = totalMonths % 12;
+
+    // console.log(`${years} yr ${months} mos`);
+    return `${years} yr ${months} mos`;
+  }
   return (
     <div className="w-full  h-[100%] px-16 py-10 flex flex-col text-[#DCB288] text-3xl">
       <div className="w-full">
         <h2 className="text-4xl font-extrabold">Work</h2>
-        <p className="mt-6 text-xl whitespace-pre-line"></p>
+        {teamMember.work.map((job) => (
+          <div key={job.title}>
+            <h2>{job.title}</h2>
+            <h3>
+              <span>{job.companyName}</span>・<span>{job.employmentType}</span>
+            </h3>
+            <h3>
+              <span>
+                {month[job.startDate.getMonth()]}{" "}
+                {job.startDate.getFullYear().toString()}{" "}
+              </span>
+              {" - "}
+              <span>
+                {job.endDate === "Present"
+                  ? "Present"
+                  : month[job.endDate.getMonth()] +
+                    " " +
+                    job.endDate.getFullYear().toString()}
+              </span>
+              ・<span>{getEmploymentDuration(job.startDate, job.endDate)}</span>
+            </h3>
+            <h3>
+              {job.location}・{job.locationType}
+            </h3>
+            <p>{job.description}</p>
+          </div>
+        ))}
       </div>
       <div className="w-full"></div>
     </div>

@@ -63,15 +63,16 @@ const contributors = [
     ],
     work: [
       {
-        title: "",
-        companyName: "",
-        employmentType: "Part-Time",
-        startDate: "",
-        endDate: "",
+        title: "Coding Teacher",
+        companyName: "Coding Giants BIH",
+        employmentType: "Part Time",
+        startDate: new Date(2022, 6 - 1, 1),
+        endDate: "Present",
         location: "Bosnia and Hercegovina",
         locationType: "Remote",
-        description: "",
-        skills: ["", "", ""],
+        description:
+          'At Coding Giants, I embraced "The Protege Effect" to its fullest, immersing myself in the enriching experience of teaching others while simultaneously enhancing my own professional growth. My role involved imparting fundamental coding concepts to young learners through engaging instruction in Scratch and Minecraft. Moreover, the sheer delight of teaching Unity and C# was an exceptional experience in itself, igniting my passion for game development and programming.',
+        skills: ["Front-End", "C#", "Python", "Scratch", "Unity"],
       },
     ],
     education: [
