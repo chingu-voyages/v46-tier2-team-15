@@ -94,6 +94,7 @@ a.active {
 
 .list-and-pagination {
   margin-bottom: 5rem;
+  background-color: #1b1107;
   padding: 1rem 0rem;
   display: flex;
   flex-direction: column;
@@ -120,12 +121,6 @@ a.active {
 .paginationBtns li:hover {
   background-color: #232931;
   color: #e69239;
-}
-
-.paginationBtns li a {
-  padding: 1rem;
-  line-height: 42px;
-  cursor: pointer;
 }
 
 @media only screen and (max-width: 1020px) {
