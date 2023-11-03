@@ -23,7 +23,7 @@ function LandingPage() {
   const fetchRecepes = (query) => {
     setLoading(true);
     fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`,
+      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     )
       .then((response) => response.json())
       .then((data) => {

@@ -14,15 +14,15 @@ function AboutPage() {
           {contentItem.text}
         </p>
       </div>
-    );  
+    );
   });
   return (
     <div className="w-full flex flex-col justify-center items-center">
       <div className="w-full bg-[#1B1107]">
-      <div className="py-[32px] px-[120px] pb-[100px] bg-[url('/src/assets/page-images/hero-section.png')]  bg-cover opacity-90">
-        {contentsArray}
+        <div className="py-[32px] px-[120px] pb-[100px] bg-[url('/src/assets/page-images/hero-section.png')]  bg-cover opacity-90">
+          {contentsArray}
+        </div>
       </div>
-    </div>
     </div>
   );
 }
