@@ -136,7 +136,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 
 function Home({ teamMember }) {
   return (
-    <div className="w-full h-[100%] px-8 py-10 flex flex-col justify-center text-[#DCB288] text-3xl ">
+    <div className="w-full h-[100%] px-8 py-10 flex flex-col justify-center text-[#DCB288] text-3xl leading-snug">
       <div className="w-full">
         <h2 className="text-center text-5xl font-extrabold">
           {teamMember.name}
@@ -150,7 +150,7 @@ function Home({ teamMember }) {
 }
 function About({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
         <div>
           <h2 className="text-4xl font-extrabold px-4">About Me</h2>
@@ -164,7 +164,7 @@ function About({ teamMember }) {
             {teamMember.hardSkills.map((hSkill) => (
               <div className="p-1 mt-2 w-[80%] border-2 rounded-full border-[#DCB288]">
                 <div className="px-2 py-1 text-center rounded-full bg-[#DCB288]">
-                  <h3 className="text-[#1B1107] text-sm">{hSkill}</h3>
+                  <h3 className="text-[#1B1107] text-sm font-bold">{hSkill}</h3>
                 </div>
               </div>
             ))}
@@ -174,7 +174,7 @@ function About({ teamMember }) {
             {teamMember.softSkills.map((sSkill) => (
               <div className="p-1 mt-2 w-[80%] border-2 rounded-full border-[#DCB288]">
                 <div className="px-2 py-1 text-center rounded-full bg-[#DCB288]">
-                  <h3 className="text-[#1B1107] text-sm">{sSkill}</h3>
+                  <h3 className="text-[#1B1107] text-sm font-bold">{sSkill}</h3>
                 </div>
               </div>
             ))}
@@ -202,7 +202,7 @@ function Education({ teamMember }) {
   ];
 
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
         <h2 className="text-4xl font-extrabold px-4">Education</h2>
 
@@ -232,7 +232,7 @@ function Education({ teamMember }) {
 
             <div>
               <p className="mt-4 whitespace-pre-line">{school.description}</p>
-              <p>
+              <p className="mt-4">
                 <span className="font-bold">Skills: </span>
                 {school.skills.map((skill) => (
                   <span key={skill}> ・{skill}・ </span>
@@ -272,7 +272,7 @@ function Work({ teamMember }) {
     return `${years} yr ${months} mos`;
   }
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
         <h2 className="text-4xl font-extrabold px-4">Work</h2>
 
@@ -306,7 +306,7 @@ function Work({ teamMember }) {
 
             <div>
               <p className="mt-4 whitespace-pre-line">{job.description}</p>
-              <p>
+              <p className="mt-4">
                 <span className="font-bold">Skills: </span>
                 {job.skills.map((skill) => (
                   <span key={skill}> ・{skill}・ </span>
@@ -322,7 +322,7 @@ function Work({ teamMember }) {
 }
 function Contact({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
+    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
         <h2 className="text-4xl font-extrabold px-4">Contact</h2>
         <p className="mt-6 text-xl whitespace-pre-line"></p>

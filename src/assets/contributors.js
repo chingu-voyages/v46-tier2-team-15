@@ -1,5 +1,12 @@
 const contributors = [
-  //Darshan Pandya
+  // Darshan Pandya
+  // Darshan Pandya
+  // Darshan Pandya
+  // Darshan Pandya
+  // Darshan Pandya
+  // Darshan Pandya
+  // Darshan Pandya
+
   {
     name: "Darshan Pandya",
     photo: "./assets/contributors_photos/Darshan_Pandya.jpg",
@@ -19,6 +26,47 @@ const contributors = [
       "Adaptability",
       "Creativity",
       "Critical thinking",
+    ],
+    work: [
+      {
+        title: "Some Job Position",
+        companyName: "Some Company Name",
+        // Full Time / Part Time / Internship / Volunteer Work / Project
+        employmentType: "Full Time",
+        // Date parameters year, month -1, day if it is endData and you are still working put "Present"
+        startDate: new Date(2022, 6 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        // On-Site / Remote / Hybrid
+        locationType: "On-Site",
+        description:
+          "Description of what you did, accomplishments, learn, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
+    education: [
+      {
+        degree: "Name of The Degree or Certificate etc",
+        schoolName: "School or Issuer of The Degree/Certificate",
+        // Date parameters year, month -1, day if it is endData and you are still studying put "Present"
+        startDate: new Date(2022, 9 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        description: "Description of what you learned, accomplishments, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
     ],
 
     discordName: "DarshanDev10",
@@ -41,6 +89,13 @@ const contributors = [
   },
 
   // Drazen Drinic
+  // Drazen Drinic
+  // Drazen Drinic
+  // Drazen Drinic
+  // Drazen Drinic
+  // Drazen Drinic
+  // Drazen Drinic
+
   {
     name: "Dražen Drinić",
     photo: "./assets/contributors_photos/Drazen_Drinic.jpeg",
@@ -166,6 +221,14 @@ const contributors = [
     ],
   },
 
+  // Teodora Kočić
+  // Teodora Kočić
+  // Teodora Kočić
+  // Teodora Kočić
+  // Teodora Kočić
+  // Teodora Kočić
+  // Teodora Kočić
+
   {
     name: "Teodora Kočić",
     photo: "./assets/contributors_photos/Teodora_Kocic.jpeg",
@@ -179,6 +242,47 @@ const contributors = [
       "Creativity",
       "Willingness to help and learn",
       "Adaptability",
+    ],
+    work: [
+      {
+        title: "Some Job Position",
+        companyName: "Some Company Name",
+        // Full Time / Part Time / Internship / Volunteer Work / Project
+        employmentType: "Full Time",
+        // Date parameters year, month -1, day if it is endData and you are still working put "Present"
+        startDate: new Date(2022, 6 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        // On-Site / Remote / Hybrid
+        locationType: "On-Site",
+        description:
+          "Description of what you did, accomplishments, learn, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
+    education: [
+      {
+        degree: "Name of The Degree or Certificate etc",
+        schoolName: "School or Issuer of The Degree/Certificate",
+        // Date parameters year, month -1, day if it is endData and you are still studying put "Present"
+        startDate: new Date(2022, 9 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        description: "Description of what you learned, accomplishments, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
     ],
     discordName: "Teja",
     socialMedia: [
@@ -198,6 +302,14 @@ const contributors = [
       },
     ],
   },
+
+  // Petre Circeag
+  // Petre Circeag
+  // Petre Circeag
+  // Petre Circeag
+  // Petre Circeag
+  // Petre Circeag
+  // Petre Circeag
 
   {
     name: "Petre Circeag",
@@ -219,7 +331,48 @@ const contributors = [
       "Adaptability",
       "Collaboration",
     ],
-    discordName: "Drazen-TheGRC",
+    work: [
+      {
+        title: "Some Job Position",
+        companyName: "Some Company Name",
+        // Full Time / Part Time / Internship / Volunteer Work / Project
+        employmentType: "Full Time",
+        // Date parameters year, month -1, day if it is endData and you are still working put "Present"
+        startDate: new Date(2022, 6 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        // On-Site / Remote / Hybrid
+        locationType: "On-Site",
+        description:
+          "Description of what you did, accomplishments, learn, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
+    education: [
+      {
+        degree: "Name of The Degree or Certificate etc",
+        schoolName: "School or Issuer of The Degree/Certificate",
+        // Date parameters year, month -1, day if it is endData and you are still studying put "Present"
+        startDate: new Date(2022, 9 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        description: "Description of what you learned, accomplishments, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
+    discordName: "Peter",
     socialMedia: [
       //GitHub
       {
@@ -239,6 +392,12 @@ const contributors = [
   },
 
   // Mohammad Waris
+  // Mohammad Waris
+  // Mohammad Waris
+  // Mohammad Waris
+  // Mohammad Waris
+  // Mohammad Waris
+  // Mohammad Waris
   {
     name: "Waris Fayiz",
     photo: "./assets/contributors_photos/Mohammad_Waris_Fayiz.jpg",
@@ -247,6 +406,47 @@ const contributors = [
       "Graduagted from school, getting bachlor's degree Computer Scince in Afghanistan, Balkh university. I love travling and want to learn more about cultures and religions.",
     hardSkills: ["HTML", "CSS", "JavaScript", "React"],
     softSkills: ["Comunication", "Teamwork", "Time Management", "Learner"],
+    work: [
+      {
+        title: "Some Job Position",
+        companyName: "Some Company Name",
+        // Full Time / Part Time / Internship / Volunteer Work / Project
+        employmentType: "Full Time",
+        // Date parameters year, month -1, day if it is endData and you are still working put "Present"
+        startDate: new Date(2022, 6 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        // On-Site / Remote / Hybrid
+        locationType: "On-Site",
+        description:
+          "Description of what you did, accomplishments, learn, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
+    education: [
+      {
+        degree: "Name of The Degree or Certificate etc",
+        schoolName: "School or Issuer of The Degree/Certificate",
+        // Date parameters year, month -1, day if it is endData and you are still studying put "Present"
+        startDate: new Date(2022, 9 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        description: "Description of what you learned, accomplishments, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
     discordName: "waris",
     socialMedia: [
       //GitHub
@@ -274,6 +474,13 @@ const contributors = [
     ],
   },
 
+  // Sadik Shaikh
+  // Sadik Shaikh
+  // Sadik Shaikh
+  // Sadik Shaikh
+  // Sadik Shaikh
+  // Sadik Shaikh
+  // Sadik Shaikh
   {
     name: "Sadik Shaikh",
     photo: "./assets/contributors_photos/Sadik_Shaikh.jpeg",
@@ -282,7 +489,48 @@ const contributors = [
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     hardSkills: ["", "", "", "", ""],
     softSkills: ["", "", "", "", ""],
-    discordName: "Drazen-TheGRC",
+    work: [
+      {
+        title: "Some Job Position",
+        companyName: "Some Company Name",
+        // Full Time / Part Time / Internship / Volunteer Work / Project
+        employmentType: "Full Time",
+        // Date parameters year, month -1, day if it is endData and you are still working put "Present"
+        startDate: new Date(2022, 6 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        // On-Site / Remote / Hybrid
+        locationType: "On-Site",
+        description:
+          "Description of what you did, accomplishments, learn, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
+    education: [
+      {
+        degree: "Name of The Degree or Certificate etc",
+        schoolName: "School or Issuer of The Degree/Certificate",
+        // Date parameters year, month -1, day if it is endData and you are still studying put "Present"
+        startDate: new Date(2022, 9 - 1, 1),
+        endDate: "Present",
+        location: "Some Country Name",
+        description: "Description of what you learned, accomplishments, etc.",
+        skills: [
+          "1st skill",
+          "2nd skill",
+          "3rd skill",
+          "4th skill",
+          "5th skill",
+        ],
+      },
+    ],
+    discordName: "Sadik",
     socialMedia: [
       //GitHub
       {
