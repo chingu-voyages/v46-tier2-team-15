@@ -14,10 +14,24 @@ import SortingList from "./SortingList";
 const APP_ID = "69b87f9b";
 const APP_KEY = "c1555e257f882dc0d5ee81afe169f456";
 
+const memorizeRecipes = (latestRecipes) => {
+  localStorage.setItem("latestRecipes", JSON.stringify(latestRecipes));
+};
+const loadLatestRecipes = () => {
+  const latestRecipes = localStorage.getItem("latestRecipes");
+
+  if (latestRecipes) {
+    return JSON.parse(latestRecipes);
+  } else {
+    return [];
+  }
+};
+
 function LandingPage() {
-  const [recipes, setRecipes] = useState([]);
+  const latest = loadLatestRecipes();
+  const [recipes, setRecipes] = useState(latest);
   const [loading, setLoading] = useState(false);
-  const [searchPerformed, setSearchPerformed] = useState(false);
+  const [searchPerformed, setSearchPerformed] = useState(latest.length > 0);
   const [dataLength, setDataLength] = useState(0);
 
   const fetchRecepes = (query) => {
@@ -25,13 +39,14 @@ function LandingPage() {
 
     setLoading(true);
     fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`,
     )
       .then((response) => response.json())
       .then((data) => {
         setRecipes(data.hits);
         setSearchPerformed(true);
-        setDataLength(recipes.length);
+        setDataLength(data.hits.length);
+        memorizeRecipes(data.hits);
       })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
