@@ -35,7 +35,7 @@ function LandingPage() {
   };
 
   return (
-    <div className="w-full bg-[#1B1107]">
+    <div className="w-full h-[100%] overflow-auto scrollbar-hide bg-[#1B1107]">
       <div className="py-[32px] px-[24px] bg-[url('/src/assets/page-images/hero-section.png')]  bg-cover opacity-90">
         <h3 className="text-white text-center text-[24px] lg:text-[32px] xl:text-[48px]">
           Hungry?
