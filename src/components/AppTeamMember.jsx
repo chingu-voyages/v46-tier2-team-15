@@ -152,10 +152,34 @@ function About({ teamMember }) {
   return (
     <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold px-4">About Me</h2>
-        <p className="my-4 pb-2 px-4 whitespace-pre-line">
-          {teamMember.aboutMe}
-        </p>
+        <div>
+          <h2 className="text-4xl font-extrabold px-4">About Me</h2>
+          <p className="my-4 pb-2 px-4 whitespace-pre-line">
+            {teamMember.aboutMe}
+          </p>
+        </div>
+        <div className="flex">
+          <div className="flex flex-col justify-center items-center basis-1/2 h-[100%]">
+            <h3 className="font-bold">Hard Skills</h3>
+            {teamMember.hardSkills.map((hSkill) => (
+              <div className="p-1 mt-2 w-[80%] border-2 rounded-full border-[#DCB288]">
+                <div className="px-2 py-1 text-center rounded-full bg-[#DCB288]">
+                  <h3 className="text-[#1B1107] text-sm">{hSkill}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col justify-center items-center basis-1/2 h-[100%]">
+            <h3 className="font-bold">Soft Skills</h3>
+            {teamMember.softSkills.map((sSkill) => (
+              <div className="p-1 mt-2 w-[80%] border-2 rounded-full border-[#DCB288]">
+                <div className="px-2 py-1 text-center rounded-full bg-[#DCB288]">
+                  <h3 className="text-[#1B1107] text-sm">{sSkill}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <div className="w-full"></div>
     </div>
