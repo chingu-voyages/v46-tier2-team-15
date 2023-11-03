@@ -9,7 +9,7 @@ import RecipePopUp from "./RecipePopUp";
 import "../App.css";
 import ReactPaginate from "react-paginate";
 
-function RecipeList({ recipes, loading, searchPerformed }) {
+function RecipeList({ recipes, loading, searchPerformed, selectedValue }) {
   const [isPopUpVisible, setIsPopUpVisible] = useState(false);
 
   const [popUpData, setPopUpData] = useState(null);
@@ -30,12 +30,25 @@ function RecipeList({ recipes, loading, searchPerformed }) {
   const recipesPerPage = 5;
   const pagesVisited = pageNumber * recipesPerPage;
 
-  const displayRecipes = recipes.slice(
-    pageNumber * recipesPerPage,
-    pageNumber * recipesPerPage + recipesPerPage,
-  );
+  // const displayRecipes = recipes.slice(
+  //   pageNumber * recipesPerPage,
+  //   pageNumber * recipesPerPage + recipesPerPage,
+  // );
 
-  const pageCount = Math.ceil(recipes.length / recipesPerPage);
+
+  // sorting list logic
+  const filterRecipeList =
+    selectedValue !== ''
+      ? recipes.filter((recipe) => recipe.recipe.mealType[0] === selectedValue)
+      : recipes;
+
+    const pageCount = Math.ceil(filterRecipeList.length / recipesPerPage);
+
+
+  const displayRecipes = filterRecipeList.slice(
+    pagesVisited,
+    pagesVisited + recipesPerPage,
+  );
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
@@ -84,7 +97,7 @@ function RecipeList({ recipes, loading, searchPerformed }) {
           <RecipePopUp data={popUpData} closeRecipePopUp={closeRecipePopUp} />
         )}
       </div>
-      {searchPerformed ? (
+      {searchPerformed && filterRecipeList.length > 0 ? (
         <div className="pagination">
           <ReactPaginate
             previousLabel={"Previous"}
@@ -98,7 +111,10 @@ function RecipeList({ recipes, loading, searchPerformed }) {
             activeClassName={"paginationActive"}
           />
         </div>
-      ) : null}
+      ) : (<div className="recipe-list"> 
+        <h3 className="text-lg tracking-widest text-white">please select another meal type.</h3>
+      </div>
+  )}
     </div>
   );
 }
