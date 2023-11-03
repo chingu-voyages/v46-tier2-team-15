@@ -8,7 +8,7 @@ we can add some random recipes below the instructions.
 This page will be replaced with the Search page once a search is done.
 */
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import RecipeList from "./RecipeList";
 
