@@ -29,6 +29,22 @@ body {
   background-color: #efdfc5;
 }
 
+/* SortingList */
+
+.sorting-list {
+  font-family: var(--secondary-font);
+  font-size: 1.1rem;
+  letter-spacing: 0.2rem;
+  color: #dcb288;
+}
+
+.dropdown {
+  color: #1b1107;
+  background-color: #dcb288;
+  width: fit-content;
+  letter-spacing: 0.2rem;
+}
+
 /* recipe-pop-up */
 
 .recipe-pop-up {
