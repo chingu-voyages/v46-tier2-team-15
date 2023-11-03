@@ -10,8 +10,7 @@ This page will be replaced with the Search page once a search is done.
 
 import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
-import RecipeList from "./RecipeList";
-
+import SortingList from "./SortingList";
 const APP_ID = "69b87f9b";
 const APP_KEY = "c1555e257f882dc0d5ee81afe169f456";
 
@@ -19,6 +18,8 @@ function LandingPage() {
   const [recipes, setRecipes] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchPerformed, setSearchPerformed] = useState(false);
+  const [dataLength, setDataLength] = useState(0);
+
 
   const fetchRecepes = (query) => {
     setLoading(true);
@@ -29,6 +30,8 @@ function LandingPage() {
       .then((data) => {
         setRecipes(data.hits);
         setSearchPerformed(true);
+        setDataLength(recipes.length);
+
       })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
@@ -50,11 +53,12 @@ function LandingPage() {
           <SearchBar search={(query) => fetchRecepes(query)} />
         </div>
       </div>
-      <RecipeList
-        recipes={recipes}
-        loading={loading}
-        searchPerformed={searchPerformed}
-      />
+      {/* if there is a data then only show sortinglist */}
+      {dataLength >= 1 && <SortingList 
+      recipes={recipes}
+      loading={loading}
+      searchPerformed={searchPerformed}
+      />}
     </div>
   );
 }
