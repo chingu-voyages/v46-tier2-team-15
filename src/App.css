@@ -39,6 +39,7 @@ body {
   width: 60vw;
   padding: 1.5rem;
   position: absolute;
+  z-index: 9999;
 }
 
 .recipe-pop-up h2 {
@@ -89,38 +90,47 @@ a.active {
   font-weight: bold;
   border-bottom: 1px solid #fff;
 }
-
 /* pagination */
 
 .list-and-pagination {
-  margin-bottom: 5rem;
-  background-color: #1b1107;
-  padding: 1rem 0rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  width: 95vw;
+  margin: 0px auto;
+  height: auto;
+  margin-bottom: 10rem;
 }
 
 .paginationBtns {
+  color: #f1f3f8;
   display: flex;
-  width: 30vw;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
+  width: fit-content;
+  margin: 0px auto;
+  font-size: 1.1rem;
+  font-family: var(--primary-font);
+  background-color: #232931;
 }
 
 .paginationBtns li {
-  list-style: none;
-  color: #232931;
-  background-color: #e69239;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.1rem;
+  border: none;
 }
 
-.paginationBtns li:hover {
-  background-color: #232931;
-  color: #e69239;
+.paginationBtns li a {
+  cursor: pointer;
+  display: block;
+  padding: 0.75rem 1.2rem;
+}
+
+.paginationBtns li a:hover {
+  background-color: #f1f3f8;
+  color: black;
+}
+
+.paginationActive a {
+  background-color: var(--hover-color);
+  color: black;
 }
 
 @media only screen and (max-width: 1020px) {
