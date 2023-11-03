@@ -20,27 +20,25 @@ function LandingPage() {
   const [searchPerformed, setSearchPerformed] = useState(false);
   const [dataLength, setDataLength] = useState(0);
 
-
   const fetchRecepes = (query) => {
-      const validInput = query.toLowerCase()
+    const validInput = query.toLowerCase();
 
     setLoading(true);
     fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${validInput}&app_id=${APP_ID}&app_key=${APP_KEY}`,
+      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     )
       .then((response) => response.json())
       .then((data) => {
         setRecipes(data.hits);
         setSearchPerformed(true);
         setDataLength(recipes.length);
-
       })
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   };
 
   return (
-    <div className="w-full bg-[#1B1107]">
+    <div className="w-full h-[100%] overflow-auto scrollbar-hide bg-[#1B1107]">
       <div className="py-[32px] px-[24px] bg-[url('/src/assets/page-images/hero-section.png')]  bg-cover opacity-90">
         <h3 className="text-white text-center text-[24px] lg:text-[32px] xl:text-[48px]">
           Hungry?
@@ -56,11 +54,13 @@ function LandingPage() {
         </div>
       </div>
       {/* if there is a data then only show sortinglist */}
-      {dataLength >= 1 && <SortingList 
-      recipes={recipes}
-      loading={loading}
-      searchPerformed={searchPerformed}
-      />}
+      {dataLength >= 1 && (
+        <SortingList
+          recipes={recipes}
+          loading={loading}
+          searchPerformed={searchPerformed}
+        />
+      )}
     </div>
   );
 }
