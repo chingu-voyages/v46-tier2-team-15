@@ -156,7 +156,7 @@ const contributors = [
         endDate: "Present",
         location: "Serbia",
         description:
-          "Upon completing bachelor academic studies in the Software Engineering study program is qualified to design, develop and implement modern software systems. Special emphasis is placed on the acquisition of generic knowledge from the design of physical architecture, system software support, inter-computer communications and architectures and algorithms, as well as on training students for the design and development of dedicated computer structures and the development of platforms and systems for working in real-time.",
+          "Upon completing bachelor academic studies in the Software Engineering study program the graduate is qualified to design, develop and implement modern software systems. Special emphasis is placed on the acquisition of generic knowledge from the design of physical architecture, system software support, inter-computer communications and architectures and algorithms, as well as on training students for the design and development of dedicated computer structures and the development of platforms and systems for working in real-time.",
         skills: [
           "Graphic Design",
           "Software Planning",
