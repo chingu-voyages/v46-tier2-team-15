@@ -97,7 +97,7 @@ function RecipeList({ recipes, loading, searchPerformed, selectedValue }) {
           <RecipePopUp data={popUpData} closeRecipePopUp={closeRecipePopUp} />
         )}
       </div>
-      {searchPerformed ? (
+      {searchPerformed && filterRecipeList.length > 0 ? (
         <div className="pagination">
           <ReactPaginate
             previousLabel={"Previous"}
@@ -111,7 +111,10 @@ function RecipeList({ recipes, loading, searchPerformed, selectedValue }) {
             activeClassName={"paginationActive"}
           />
         </div>
-      ) : null}
+      ) : (<div className="recipe-list"> 
+        <h3 className="text-lg tracking-widest text-white">please select another meal type.</h3>
+      </div>
+  )}
     </div>
   );
 }
