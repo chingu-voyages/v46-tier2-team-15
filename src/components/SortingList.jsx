@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import RecipeList from './RecipeList';
-import '../App.css';
+import React, { useState } from "react";
+import "../App.css";
 
-const SortingList = ({ recipes, loading, searchPerformed }) => {
-  const [selectedValue, setSelectedValue] = useState(''); // Default selected value
+const SortingList = ({ handleSortChange }) => {
+  const [selectedValue, setSelectedValue] = useState(""); // Default selected value
 
   const handleDropdownChange = (event) => {
     setSelectedValue(event.target.value);
+    handleSortChange(event.target.value);
   };
 
   return (
@@ -25,11 +25,6 @@ const SortingList = ({ recipes, loading, searchPerformed }) => {
           <option value="teatime">Teatime</option>
         </select>
       </div>
-      {recipes && <RecipeList 
-        recipes={recipes}
-        selectedValue={selectedValue}
-        loading={loading}
-        searchPerformed={searchPerformed} />}
     </>
   );
 };

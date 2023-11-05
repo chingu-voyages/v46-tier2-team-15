@@ -11,6 +11,8 @@ This page will be replaced with the Search page once a search is done.
 import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import SortingList from "./SortingList";
+import RecipeList from "./RecipeList";
+
 const APP_ID = "69b87f9b";
 const APP_KEY = "c1555e257f882dc0d5ee81afe169f456";
 
@@ -32,11 +34,10 @@ function LandingPage() {
   const [recipes, setRecipes] = useState(latest);
   const [loading, setLoading] = useState(false);
   const [searchPerformed, setSearchPerformed] = useState(latest.length > 0);
-  const [dataLength, setDataLength] = useState(0);
+
+  const [sortBy, setSortBy] = useState(null);
 
   const fetchRecepes = (query) => {
-    const validInput = query.toLowerCase();
-
     setLoading(true);
     fetch(
       `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`,
@@ -45,7 +46,6 @@ function LandingPage() {
       .then((data) => {
         setRecipes(data.hits);
         setSearchPerformed(true);
-        setDataLength(data.hits.length);
         memorizeRecipes(data.hits);
       })
       .catch((error) => console.error(error))
@@ -69,13 +69,16 @@ function LandingPage() {
         </div>
       </div>
       {/* if there is a data then only show sortinglist */}
-      {dataLength >= 1 && (
-        <SortingList
-          recipes={recipes}
-          loading={loading}
-          searchPerformed={searchPerformed}
-        />
+      {recipes.length >= 1 && (
+        <SortingList handleSortChange={(sort) => setSortBy(sort)} />
       )}
+
+      <RecipeList
+        recipes={recipes}
+        sortBy={sortBy}
+        loading={loading}
+        searchPerformed={searchPerformed}
+      />
     </div>
   );
 }

@@ -9,7 +9,7 @@ import RecipePopUp from "./RecipePopUp";
 import "../App.css";
 import ReactPaginate from "react-paginate";
 
-function RecipeList({ recipes, loading, searchPerformed, selectedValue }) {
+function RecipeList({ recipes, loading, searchPerformed, sortBy }) {
   const [isPopUpVisible, setIsPopUpVisible] = useState(false);
 
   const [popUpData, setPopUpData] = useState(null);
@@ -35,15 +35,13 @@ function RecipeList({ recipes, loading, searchPerformed, selectedValue }) {
   //   pageNumber * recipesPerPage + recipesPerPage,
   // );
 
-
   // sorting list logic
   const filterRecipeList =
-    selectedValue !== ''
-      ? recipes.filter((recipe) => recipe.recipe.mealType[0] === selectedValue)
+    sortBy && sortBy !== ""
+      ? recipes.filter((recipe) => recipe.recipe.mealType[0] === sortBy)
       : recipes;
 
-    const pageCount = Math.ceil(filterRecipeList.length / recipesPerPage);
-
+  const pageCount = Math.ceil(filterRecipeList.length / recipesPerPage);
 
   const displayRecipes = filterRecipeList.slice(
     pagesVisited,
@@ -80,11 +78,13 @@ function RecipeList({ recipes, loading, searchPerformed, selectedValue }) {
   return (
     <div className="list-and-pagination">
       {!loading && !searchPerformed ? (
-        <div className="text-white">Search for your recipe</div>
+        <div className="text-white text-center mt-3">
+          Search for your recipe
+        </div>
       ) : null}
 
       {loading ? (
-        <div className="text-white">
+        <div className="text-white text-center mt-3">
           <p>Loading</p>
           <br />
         </div>
@@ -111,10 +111,15 @@ function RecipeList({ recipes, loading, searchPerformed, selectedValue }) {
             activeClassName={"paginationActive"}
           />
         </div>
-      ) : (<div className="recipe-list"> 
-        <h3 className="text-lg tracking-widest text-white">please select another meal type.</h3>
-      </div>
-  )}
+      ) : (
+        recipes.length > 0 && (
+          <div className="recipe-list">
+            <h3 className="text-lg tracking-widest text-white text-center">
+              please select another meal type.
+            </h3>
+          </div>
+        )
+      )}
     </div>
   );
 }
