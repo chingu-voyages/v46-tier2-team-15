@@ -13,6 +13,11 @@ body {
   font-family: sans-serif;
 }
 
+a.active {
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+}
+
 .recipe-card {
   background-color: #dcb288;
 }
@@ -51,11 +56,9 @@ body {
   background-color: #efdfc5;
   color: #1b1107;
   overflow-y: scroll;
-  height: 70vh;
-  width: 60vw;
   padding: 1.5rem;
   position: absolute;
-  z-index: 9999;
+  z-index: 10;
 }
 
 .recipe-pop-up h2 {
@@ -91,21 +94,27 @@ body {
 }
 
 .recipe-pop-up .mealType p {
-  background-color: #232931;
+  background-color: #1b1107;
   color: var(--hover-color);
-  padding: 1rem;
+  padding: 0.3rem 1rem;
+  border-radius: 50px;
 }
 
 .recipe-pop-up a {
   font-family: var(--secondary-font);
-  color: var(--hover-color);
+  color: #efdfc5;
   text-decoration: none;
-  background-color: #232931;
+  background-color: #1b1107;
 }
-a.active {
-  font-weight: bold;
-  border-bottom: 1px solid #fff;
+
+.recipe-pop-up a:hover {
+  color: var(--hover-color);
 }
+
+.vertical-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 /* pagination */
 
 .list-and-pagination {
@@ -149,20 +158,7 @@ a.active {
   color: black;
 }
 
-@media only screen and (max-width: 1020px) {
-  .recipe-pop-up {
-    width: 70vw;
-    height: 80vh;
-  }
-}
-
 @media only screen and (max-width: 860px) {
-  .recipe-pop-up {
-    width: 85vw;
-    height: 100vh;
-    padding: 1rem;
-  }
-
   .recipe-pop-up h2 {
     font-size: 1.3rem;
   }
@@ -170,13 +166,5 @@ a.active {
   .recipe-pop-up .topic {
     font-size: 1rem;
     letter-spacing: 0.15rem;
-  }
-}
-
-@media only screen and (max-width: 560px) {
-  .recipe-pop-up {
-    width: 85vw;
-    height: 100vh;
-    padding: 0.5rem 0rem;
   }
 }

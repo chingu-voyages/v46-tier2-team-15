@@ -12,7 +12,7 @@ const SortingList = ({ handleSortChange }) => {
   return (
     <>
       <div className="sorting-list  flex items-center justify-around w-fit px-4 h-auto mx-auto my-8">
-        <h1>Sort By :</h1>
+        <h1>Filter By :</h1>
         <select
           value={selectedValue}
           className="dropdown cursor-pointer py-4 px-6 mx-4"

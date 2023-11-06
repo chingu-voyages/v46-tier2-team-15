@@ -46,8 +46,8 @@ function Header() {
             style={{ backgroundColor: "#1B1107" }}
           >
             <ul
-              className={`flex flex-col md:flex-row items-center  absolute bg-[#1B1107] z-10 md:static  left-0 w-full pl-0 transition-all duration-500 ease-in ${
-                isOpen ? "top-[100px] " : "top-[-490px]"
+              className={`flex flex-col md:flex-row items-center  absolute bg-[#1B1107] z-20 md:static  left-0 w-full pl-0 transition-all duration-500 ease-in ${
+                isOpen ? "top-[90px] " : "top-[-490px]"
               }`}
             >
               <li className="md:ml-8 text-xl md:my-0 my-7 ">
