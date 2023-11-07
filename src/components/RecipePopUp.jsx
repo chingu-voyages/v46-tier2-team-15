@@ -7,6 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { RxCross1 } from "react-icons/rx";
 import "../App.css";
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 import {
   FacebookShareButton,
   WhatsappShareButton,
@@ -21,6 +23,8 @@ import {
 } from "react-share";
 
 function RecipePopUp({ data, closeRecipePopUp }) {
+    const themeData = useContext(ThemeContext);
+    const {theme , toggleTheme} = themeData;
   if (data) {
     // console.log(data)
     const { label, mealType, ingredients, totalNutrients, url } = data;
@@ -41,7 +45,7 @@ function RecipePopUp({ data, closeRecipePopUp }) {
             {mealType.map((type) => {
               const id = uuidv4();
               return (
-                <p className="border-none w-fit tracking-widest" key={id}>
+                <p className="mealtype-text border-none w-fit tracking-widest" key={id}>
                   {type}
                 </p>
               );
@@ -127,8 +131,8 @@ function RecipePopUp({ data, closeRecipePopUp }) {
                   <FacebookIcon
                     round={true}
                     size={32}
-                    iconFillColor="#efdfc5"
-                    bgStyle={{ fill: "#1b1107" }}
+                    iconFillColor={theme === 'dark' ? '#e69239' : '#FD5A5B'}
+                    bgStyle={{ fill: theme === 'dark' ? '#1E1E1E' : '#EAE4E4' }}
                   ></FacebookIcon>
                 </FacebookShareButton>
 
@@ -136,8 +140,8 @@ function RecipePopUp({ data, closeRecipePopUp }) {
                   <WhatsappIcon
                     round={true}
                     size={32}
-                    iconFillColor="#efdfc5"
-                    bgStyle={{ fill: "#1b1107" }}
+                    iconFillColor={theme === 'dark' ? '#e69239' : '#FD5A5B'}
+                    bgStyle={{ fill: theme === 'dark' ? '#1E1E1E' : '#EAE4E4' }}
                   ></WhatsappIcon>
                 </WhatsappShareButton>
 
@@ -145,8 +149,8 @@ function RecipePopUp({ data, closeRecipePopUp }) {
                   <TwitterIcon
                     round={true}
                     size={32}
-                    iconFillColor="#efdfc5"
-                    bgStyle={{ fill: "#1b1107" }}
+                    iconFillColor={theme === 'dark' ? '#e69239' : '#FD5A5B'}
+                    bgStyle={{ fill: theme === 'dark' ? '#1E1E1E' : '#EAE4E4' }}
                   ></TwitterIcon>
                 </TwitterShareButton>
 
@@ -154,8 +158,8 @@ function RecipePopUp({ data, closeRecipePopUp }) {
                   <LinkedinIcon
                     round={true}
                     size={32}
-                    iconFillColor="#efdfc5"
-                    bgStyle={{ fill: "#1b1107" }}
+                    iconFillColor={theme === 'dark' ? '#e69239' : '#FD5A5B'}
+                    bgStyle={{ fill: theme === 'dark' ? '#1E1E1E' : '#EAE4E4' }}
                   ></LinkedinIcon>
                 </LinkedinShareButton>
               </div>

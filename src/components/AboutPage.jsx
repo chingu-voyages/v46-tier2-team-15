@@ -1,4 +1,5 @@
 import { contents } from "../data/aboutPageContent";
+import '../App.css'
 /*
 This page will open between Header and Footer and 
 it will be a page about the Dish Dive App.
@@ -18,7 +19,7 @@ function AboutPage() {
   });
   return (
     <div className="w-full h-[100%] flex flex-col overflow-auto scrollbar-hide">
-      <div className="w-full bg-[#1B1107]">
+      <div className="about-div w-full">
         <div className="py-[32px] px-[120px] pb-[100px] bg-[url('/src/assets/page-images/hero-section.png')]  bg-cover opacity-90">
           {contentsArray}
         </div>

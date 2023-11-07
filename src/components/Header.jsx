@@ -1,12 +1,19 @@
 import { NavLink } from "react-router-dom";
 import DishDiveLogoWhite from "../assets/logo/DishDive_Logo_White.png";
-import SwitchBtn from "../assets/page-images/Switch.svg";
+import DishDiveLogoBlack from "../assets/logo/DishDive_Logo_Black.png";
 import Line from "../assets/page-images/Line.svg";
 import MenuIcon from "../assets/page-images/menu-icon.png";
 import CloseMenu from "../assets/page-images/close-menu.png";
 import { useEffect, useState } from "react";
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
+import { PiMoonStarsFill } from 'react-icons/pi';
+import { RiSunFill } from 'react-icons/ri';
+import '../App.css'
 
 function Header() {
+  const themeData = useContext(ThemeContext);
+  const {theme , toggleTheme} = themeData;
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenuIcon = () => {
     setIsOpen(!isOpen);
@@ -17,17 +24,20 @@ function Header() {
   }, []);
 
   return (
-    <div className="w-full p-[15px] md:p-[30px] xl:px-[120px] bg-[#1B1107]">
+    <div className="header w-full p-[15px] md:p-[30px] xl:px-[120px]">
       <div
-        className="flex justify-between	  items-center text-white"
-        style={{ border: "2px solid #FBFCFB" }}
+        className="header-border flex justify-between	items-center"
       >
         <div className="flex justify-center items-center">
-          <img
+          {theme === 'light' ?  <img
+            src={DishDiveLogoBlack}
+            alt="Dish Dive Logo"
+            className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
+          /> :  <img
             src={DishDiveLogoWhite}
             alt="Dish Dive Logo"
             className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
-          />
+          />}
           <h1 className="text-lg md:text-[28px] ml-8 md:ml-7 lg:text-[40px]">
             DISH DIVE
           </h1>
@@ -43,10 +53,9 @@ function Header() {
           {/* {!isOpen && ( */}
           <div
             className="flex flex-col justify-center items-center"
-            style={{ backgroundColor: "#1B1107" }}
           >
             <ul
-              className={`flex flex-col md:flex-row items-center  absolute bg-[#1B1107] z-20 md:static  left-0 w-full pl-0 transition-all duration-500 ease-in ${
+              className={`flex flex-col md:flex-row items-center  absolute z-20 md:static  left-0 w-full pl-0 transition-all duration-500 ease-in ${
                 isOpen ? "top-[90px] " : "top-[-490px]"
               }`}
             >
@@ -78,16 +87,21 @@ function Header() {
                 </NavLink>
               </li>
 
-              <li className="md:ml-8">
-                <img src={Line} alt="" className=" hidden md:inline-block" />
-              </li>
+              {/* <li className="md:ml-8">
+                <img src={Line} alt="" className=" break-line hidden md:inline-block" />
+                <div className="break-line"></div>
+              </li> */}
 
               <li className="md:ml-8 text-xl md:my-0 my-7">
-                <img
-                  src={SwitchBtn}
-                  alt=""
-                  className="md:mr-7 cursor-pointer w-[60px] lg:w-[75px]"
-                />
+                {theme === 'light' ? (
+                <button onClick={toggleTheme} className="m-2 mr-8">
+                  <PiMoonStarsFill  size={26}  />
+                  </button>
+                ) : (
+                <button onClick={toggleTheme} className="m-2 mr-8">
+                    <RiSunFill size={26} />
+                </button>
+                )}
               </li>
             </ul>
           </div>

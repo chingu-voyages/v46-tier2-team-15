@@ -28,7 +28,7 @@ function RecipeCard({ recipe, getRecipe, id }) {
       </div>
 
       <div className="more-details flex flex-col items-start justify-around self-start my-1 bottom-14">
-        <div className="cuisin flex items-center p-1">
+        <div className="cuisine flex items-center p-1">
           <ImEarth />
           <p className="recipe-cuisineType tracking-widest py-0 px-2 capitalize">
             {cuisineType}
