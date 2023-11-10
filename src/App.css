@@ -63,7 +63,10 @@ a.active {
 
 #light .recipe-card {
   background-color: #EAE4E4;
+  border: 4px solid #c1c1c1;
+  padding: 0;
 }
+
 
 #light .intro-text{
   color: white;
@@ -266,6 +269,10 @@ a.active {
 .atm-card{
   background-color: var(--primary-color);
   border-color: var(--secondary-color);
+}
+
+.atm-card{
+    border: 4px solid #c1c1c1;
 }
 
 .member-image{
