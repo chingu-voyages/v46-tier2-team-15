@@ -31,11 +31,11 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
         className={`flex  bg-[#DCB288] border-[#DCB288] 
         ${
           expand
-            ? "h-[100px] md:h-auto flex-row	justify-between items-center md:flex-col md:w-[25%]  border-2 md:border-8 md:h-auto h-[25%]"
+            ? "h-[100px] md:h-auto flex-row	justify-between items-center md:flex-col md:w-[25%]  border-2 md:border-8 md:h-auto"
             : "flex-col w-[12rem] md:h-[18rem] border-4 h-full"
         }`}
       >
-        <div className="md:w-full h-full bg-[#DCB288]">
+        <div className="md:w-full md:h-full bg-[#DCB288]">
           {/*  */}
           <div
             className={`h-[50%] bg-[#1B1107] ${
