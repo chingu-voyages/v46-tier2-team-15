@@ -91,11 +91,12 @@ function Header() {
               </li>
 
               <li className="md:ml-8">
-                <img
+                {/* <img
                   src={Line}
                   alt=""
                   className=" hidden md:inline-block h-[50px]"
-                />
+                /> */}
+                <div className="line"></div>
               </li>
                 <li className="md:ml-8 text-xl md:my-0 my-7">
                 {theme === 'light' ? (
