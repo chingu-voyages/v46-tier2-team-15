@@ -69,7 +69,7 @@ function RecipeList({ recipes, loading, searchPerformed, sortBy }) {
       })
     ) : (
       <div className="recipe-list">
-        <h3 className="text-lg tracking-widest text-white">
+        <h3 className="text-lg tracking-widest">
           Recipes not Found.
         </h3>
       </div>
@@ -78,13 +78,13 @@ function RecipeList({ recipes, loading, searchPerformed, sortBy }) {
   return (
     <div className="list-and-pagination">
       {!loading && !searchPerformed ? (
-        <div className="text-white text-center mt-3">
+        <div className=" text-center mt-3">
           Search for your recipe
         </div>
       ) : null}
 
       {loading ? (
-        <div className="text-white text-center mt-3">
+        <div className=" text-center mt-3">
           <p>Loading</p>
           <br />
         </div>
@@ -114,7 +114,7 @@ function RecipeList({ recipes, loading, searchPerformed, sortBy }) {
       ) : (
         recipes.length > 0 && (
           <div className="recipe-list">
-            <h3 className="text-lg tracking-widest text-white text-center">
+            <h3 className="text-lg tracking-widest text-center">
               please select another meal type.
             </h3>
           </div>
