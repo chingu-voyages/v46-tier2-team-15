@@ -51,7 +51,10 @@ a.active {
   border-bottom: 2px solid var(--text-color);
 }
 
-
+.line{
+  border: 1.5px solid var(--text-color);
+  height: 3rem;
+}
 
 #dark .recipe-card {
   background-color: #DCB288;
@@ -239,6 +242,10 @@ a.active {
 
   .paginationBtns li a {
     padding: 0.5rem 0.75rem;
+  }
+
+  .line{
+    display: none;
   }
 }
 
