@@ -1,12 +1,22 @@
 import { NavLink } from "react-router-dom";
 import DishDiveLogoWhite from "../assets/logo/DishDive_Logo_White.png";
+import DishDiveLogoBlack from "../assets/logo/DishDive_Logo_Black.png";
 import SwitchBtn from "../assets/page-images/Switch.svg";
 import Line from "../assets/page-images/Line.svg";
-import MenuIcon from "../assets/page-images/menu-icon.png";
-import CloseMenu from "../assets/page-images/close-menu.png";
-import { useEffect, useState } from "react";
+// import MenuIcon from "../assets/page-images/menu-icon.png";
+// import CloseMenu from "../assets/page-images/close-menu.png";
+import { useEffect, useState, useContext } from "react";
+import { PiMoonStarsFill } from 'react-icons/pi';
+import { RiSunFill } from 'react-icons/ri';
+import { ThemeContext } from '../App';
+import {PiHamburgerFill} from 'react-icons/pi'
+import {LuUtensilsCrossed} from 'react-icons/lu'
+
+
 
 function Header() {
+  const themeData = useContext(ThemeContext);
+  const {theme , toggleTheme} = themeData;
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenuIcon = () => {
     setIsOpen(!isOpen);
@@ -17,36 +27,38 @@ function Header() {
   }, []);
 
   return (
-    <div className="w-full p-[15px] md:p-[20px] xl:px-[120px] bg-[#1B1107]">
+    <div className=" header w-full p-[15px] md:p-[20px] xl:px-[120px]">
       <div
-        className="flex justify-between	items-center text-white"
-        style={{ border: "2px solid #FBFCFB" }}
+        className="header-border flex justify-between	items-center"
       >
         <div className="flex justify-center items-center">
-          <img
+          {theme === 'light' ?  <img
+            src={DishDiveLogoBlack}
+            alt="Dish Dive Logo"
+            className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
+          /> :  <img
             src={DishDiveLogoWhite}
             alt="Dish Dive Logo"
-            className="w-10 h-10 m-3.5 md:w-[50px] md:h-[50px] md:m-5"
-          />
+            className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
+          />}
           <h1 className="text-lg md:text-[28px] ml-8 md:ml-7 lg:text-[36px]">
             DISH DIVE
           </h1>
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <div className="w-10 h-10 mr-3.5 cursor-pointer md:hidden">
+          <div className="w-10 h-10 mr-3.5 pt-1 cursor-pointer md:hidden">
             <div onClick={toggleMenuIcon}>
-              {!isOpen ? <img src={MenuIcon} /> : <img src={CloseMenu} />}
+              {!isOpen ? <PiHamburgerFill size={30}/> : <LuUtensilsCrossed size={30}/>}
             </div>
           </div>
 
           {/* {!isOpen && ( */}
           <div
             className="flex flex-col justify-center items-center"
-            style={{ backgroundColor: "#1B1107" }}
           >
             <ul
-              className={`flex flex-col md:flex-row items-center  absolute bg-[#1B1107] z-20 md:static  left-0 w-full pl-0 transition-all duration-500 ease-in ${
+              className={`navbar flex flex-col md:flex-row items-center  absolute z-20 md:static  left-0 w-full pl-0 transition-all duration-500 ease-in ${
                 isOpen ? "top-[90px] " : "top-[-490px]"
               }`}
             >
@@ -85,13 +97,16 @@ function Header() {
                   className=" hidden md:inline-block h-[50px]"
                 />
               </li>
-
-              <li className="md:ml-8 text-xl md:my-0 my-7">
-                <img
-                  src={SwitchBtn}
-                  alt=""
-                  className="md:mr-7 cursor-pointer w-10 lg:w-[50px]"
-                />
+                <li className="md:ml-8 text-xl md:my-0 my-7">
+                {theme === 'light' ? (
+                <button onClick={toggleTheme} className="md:mr-7 cursor-pointer w-10 lg:w-[50px]">
+                  <PiMoonStarsFill  size={26}  />
+                  </button>
+                ) : (
+                <button onClick={toggleTheme} className="md:mr-7 cursor-pointer w-10 lg:w-[50px]">
+                    <RiSunFill size={26} />
+                </button>
+                )}
               </li>
             </ul>
           </div>

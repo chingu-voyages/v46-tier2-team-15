@@ -24,7 +24,7 @@ function RecipeCard({ recipe, getRecipe, id }) {
       </div>
 
       <div className="recipe-label-div min-h-[4rem] h-auto w-full">
-        <h3 className="recipe-label font-bold text-[14px] md:text-base text-black">
+        <h3 className="recipe-label font-bold text-[14px] md:text-base ">
           {label}
         </h3>
       </div>
