@@ -3,6 +3,7 @@ This page will open as a pop up in front of the App Team Page and
 it will be a page about a team member.
 */
 import React from "react";
+import '../App.css'
 
 import { FaHome } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
@@ -28,14 +29,14 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
     >
       {/* Small card */}
       <div
-        className={`flex  bg-[#DCB288] border-[#DCB288] 
+        className={`flex atm-card
         ${
           expand
             ? "h-[100px] md:h-auto flex-row	justify-between items-center md:flex-col md:w-[25%]  border-2 md:border-8 md:h-auto"
             : "flex-col w-[12rem] md:h-[18rem] border-4 h-full"
         }`}
       >
-        <div className="md:w-full md:h-full bg-[#DCB288]">
+        <div className="card-center md:w-full md:h-full">
           {/*  */}
           <div
             className={`h-[50%] bg-[#1B1107] ${
@@ -43,7 +44,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
             }`}
           ></div>
           <div
-            className={`mx-auto my-[20%] w-3/4 md:w-3/5 relative top-[-50%] border-[#DCB288] 
+            className={`member-image mx-auto my-[20%] w-3/4 md:w-3/5 relative top-[-50%]
             ${
               expand
                 ? "top-[-120%] md:top-[-50%] my-0 md:my-[20%] border-2 md:border-8 w-[100px]"
@@ -58,7 +59,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
           </div>
         </div>
 
-        <div className="h-full m-2 flex flex-col items-center bg-[#DCB288]">
+        <div className="member-detail h-full m-2 flex flex-col items-center">
           <h2
             className={`font-bold ${
               expand
@@ -95,7 +96,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
         </div>
         <button
           onClick={toggleExpand}
-          className={`md:w-full bg-[#C7AC8F] border-[#1B1107] 
+          className={`md:w-full toggle-btn
           ${
             expand
               ? "w-[20%] md:w-full md:px-4 md:p-2  border-2 text-base md:border-4 md:text-2xl"
@@ -111,10 +112,10 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
       </div>
       {/* Right big card */}
       <div
-        className={`bg-[#1B1107] border-[#DCB288] border-2 md:border-8 md:border-l-0 flex flex-col 
+        className={`big-atm-card bg-[#1B1107] border-[#DCB288] border-2 md:border-8 md:border-l-0 flex flex-col 
         ${expand ? "w-full md:w-[75%] h-[100%] visible" : " hidden"}`}
       >
-        <nav className="w-full flex justify-center p-4 text-[#DCB288] text-lg md:text-3xl">
+        <nav className="w-full flex justify-center p-4 text-lg md:text-3xl">
           <ul className="flex justify-around w-[60%] ">
             <li
               onClick={() => setMemberInfo("home")}
@@ -167,7 +168,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 
 function Home({ teamMember }) {
   return (
-    <div className="w-full h-[100%] md:px-8 md:py-10 flex flex-col justify-center text-[#DCB288] md:text-3xl leading-snug">
+    <div className="w-full h-[100%] md:px-8 md:py-10 flex flex-col justify-center md:text-3xl leading-snug">
       <div className="w-full">
         <h2 className="text-center text-3xl md:text-5xl font-extrabold">
           {teamMember.name}
@@ -181,7 +182,7 @@ function Home({ teamMember }) {
 }
 function About({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-base leading-snug">
       <div className="w-full">
         <div>
           <h2 className="text-2xl md:text-4xl font-extrabold px-4">About Me</h2>
@@ -237,7 +238,7 @@ function Education({ teamMember }) {
   ];
 
   return (
-    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-base leading-snug">
       <div className="w-full">
         <h2 className="text-2xl md:text-4xl font-extrabold px-4">Education</h2>
 
@@ -312,7 +313,7 @@ function Work({ teamMember }) {
     return `${years} yr ${months} mos`;
   }
   return (
-    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-base leading-snug">
       <div className="w-full">
         <h2 className="text-2xl md:text-4xl font-extrabold px-4">Work</h2>
 
@@ -367,7 +368,7 @@ function Work({ teamMember }) {
 }
 function Contact({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-base leading-snug">
       <div className="w-full">
         <h2 className="text-2xl md:text-4xl font-extrabold px-4">Contact</h2>
         <p className="mt-6 text-sm md:text-base lg:text-xl whitespace-pre-line"></p>

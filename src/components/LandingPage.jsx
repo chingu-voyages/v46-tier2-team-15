@@ -54,14 +54,14 @@ function LandingPage() {
 
   return (
     <div className="landing-page w-full h-[100%] overflow-auto scrollbar-hide">
-      <div className="py-[32px] px-[24px] bg-[url('/src/assets/page-images/hero-section.png')]  bg-cover opacity-90">
+      <div className="intro-text py-[32px] px-[24px] bg-[url('/src/assets/page-images/hero-section.png')]  bg-cover opacity-90">
         <h3 className="text-center text-[18px] md:text-[24px] lg:text-[32px] xl:text-[40px] font-jua">
           Hungry?
         </h3>
-        <h3 className="text-center text-[18px] md:text-[24px] lg:text-[32px] xl:text-[40px] mb-[10px] font-jua">
+        <h3 className="intro-text text-center text-[18px] md:text-[24px] lg:text-[32px] xl:text-[40px] mb-[10px] font-jua">
           You are at the right place!
         </h3>
-        <p className="text-center text-[12px] lg:text-[16px] xl:text-[20px] mb-[20px]">
+        <p className="intro-text text-center text-[12px] lg:text-[16px] xl:text-[20px] mb-[20px]">
           We help you in preparing the healthy nutritious dishes
         </p>
         <div className="px-[24px] w-full md:w-[50%] md:px-[0] m-auto">
