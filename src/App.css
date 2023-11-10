@@ -62,7 +62,7 @@ a.active {
   background-color: #EAE4E4;
 }
 
-#light .landing-page{
+#light .intro-text{
   color: white;
 }
 
@@ -240,4 +240,66 @@ a.active {
   .paginationBtns li a {
     padding: 0.5rem 0.75rem;
   }
+}
+
+
+/* app team member  */
+
+.app-team-members-div{
+  background-color: var(--primary-color);
+}
+
+#light .intro-header , 
+#light .intro{
+  color: #1B1107;
+}
+
+/* atm-card : app team member card */
+
+.atm-card{
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+.member-image{
+  border-color: var(--secondary-color);
+}
+
+#dark .atm-card{
+  background-color: #DCB288;
+}
+
+.member-details{
+  background-color: var(--secondary-color);
+}
+
+#light .toggle-btn{
+  background-color: var(--text-color);
+  color: white;
+  border: var(--primary-color);
+}
+
+#dark .toggle-btn{
+  background-color: #DCB288;
+  border-color: #1E1E1E;
+}
+
+#light .card-center,
+#light .member-detail{
+  background-color: var(--primary-color);
+  border: var(--primary-color);
+}
+
+#dark .big-atm-card{
+  color: #DCB288;
+}
+
+#light .big-atm-card{
+  border: transparent;
+  background-color: #EAE4E4;
+  color: black;
+}
+
+.big-atm-card{
+  color: var(--text-color);
 }
