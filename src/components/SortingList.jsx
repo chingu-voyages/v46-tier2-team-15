@@ -12,10 +12,10 @@ const SortingList = ({ handleSortChange }) => {
   return (
     <>
       <div className="sorting-list  flex items-center justify-around w-fit px-4 h-auto mx-auto my-8">
-        <h1>Filter By :</h1>
+        <h1 className="text-[14px] md:text-base">Filter By :</h1>
         <select
           value={selectedValue}
-          className="dropdown cursor-pointer py-4 px-6 mx-4"
+          className="dropdown cursor-pointer px-1 py-1 md:py-2 md:px-6 mx-4 text-[12px] md:text-base"
           onChange={handleDropdownChange}
         >
           <option value="">None</option>

@@ -23,32 +23,52 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
   return (
     <div
       className={`flex  
-      ${expand ? "w-full h-[100%]" : "flex-col m-3"} 
+      ${expand ? "w-full h-[100%] flex-col md:flex-row" : "flex-col m-3"} 
       ${visibility ? "visible " : expand ? "visible" : "hidden"}`}
     >
       {/* Small card */}
       <div
-        className={`flex flex-col bg-[#DCB288] border-[#DCB288] 
+        className={`flex  bg-[#DCB288] border-[#DCB288] 
         ${
-          expand ? " w-[25%] h-full border-8" : "w-[12rem] h-[18rem] border-4"
+          expand
+            ? "h-[100px] md:h-auto flex-row	justify-between items-center md:flex-col md:w-[25%]  border-2 md:border-8 md:h-auto h-[25%]"
+            : "flex-col w-[12rem] md:h-[18rem] border-4 h-full"
         }`}
       >
-        <div className="w-full bg-[#DCB288]">
+        <div className="md:w-full h-full bg-[#DCB288]">
           {/*  */}
-          <div className="h-[50%] bg-[#1B1107]"></div>
           <div
-            className={`mx-auto my-[20%] w-3/5 relative top-[-50%] border-[#DCB288] 
-            ${expand ? "border-8" : "border-4"}`}
+            className={`h-[50%] bg-[#1B1107] ${
+              expand ? "h-full md:h-[50%]" : ""
+            }`}
+          ></div>
+          <div
+            className={`mx-auto my-[20%] w-3/4 md:w-3/5 relative top-[-50%] border-[#DCB288] 
+            ${
+              expand
+                ? "top-[-120%] md:top-[-50%] my-0 md:my-[20%] border-2 md:border-8 w-[100px]"
+                : "border-4"
+            }`}
           >
-            <img src={teamMember.photo} alt="App team member portrait photo" />
+            <img
+              src={teamMember.photo}
+              alt="App team member portrait photo "
+              className={`${expand ? "h-full" : ""}`}
+            />
           </div>
         </div>
 
-        <div className="h-full m-2 mt-[-15%] flex flex-col items-center bg-[#DCB288]">
-          <h2 className={`font-bold ${expand ? "text-4xl mt-2" : "text-xl"}`}>
+        <div className="h-full m-2 flex flex-col items-center bg-[#DCB288]">
+          <h2
+            className={`font-bold ${
+              expand
+                ? "mt-0 md:mt-[-15%]  text-lg md:text-3xl lg:text-4xl mt-2"
+                : "text-xl mt-[-15%]"
+            }`}
+          >
             {teamMember.name}
           </h2>
-          <h3 className={`${expand ? "text-xl mt-2" : "text-xs"}`}>
+          <h3 className={`${expand ? "text-sm md:text-xl mt-2" : "text-xs"}`}>
             {teamMember.role}
           </h3>
           <ul
@@ -56,10 +76,15 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
             ${expand ? "text-2xl mt-2" : "text-s"}`}
           >
             {teamMember.socialMedia.map((sc) => (
-              <li key={sc.key} className={`${expand ? "p-2" : "p-1 pt-2"}`}>
+              <li
+                key={sc.key}
+                className={`${expand ? "p-1 md:p-2" : "p-1 pt-2"}`}
+              >
                 <a href={sc.link} target="_blank">
                   <img
-                    className={`${expand ? "h-[28px]" : "h-[16px]"}`}
+                    className={`${
+                      expand ? "h-[16px] md:h-[28px]" : "h-[16px]"
+                    }`}
                     src={sc.icon}
                     alt={sc.key}
                   />
@@ -70,20 +95,26 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
         </div>
         <button
           onClick={toggleExpand}
-          className={`w-full bg-[#C7AC8F] border-[#1B1107] 
+          className={`md:w-full bg-[#C7AC8F] border-[#1B1107] 
           ${
-            expand ? "px-4 py-2 border-4 text-2xl" : "px-2 py-1 border-2 text-s"
+            expand
+              ? "w-[20%] md:w-full md:px-4 md:p-2  border-2 text-base md:border-4 md:text-2xl"
+              : "px-2 py-1 border-2 text-xs mb-[15px]"
           }`}
         >
-          {expand ? "Collapse" : "Expand"}
+          {expand ? (
+            <span className="text-xs md:text-base lg:text-2xl">Collapse</span>
+          ) : (
+            <span>Expand</span>
+          )}
         </button>
       </div>
       {/* Right big card */}
       <div
-        className={`bg-[#1B1107] border-[#DCB288] border-8 border-l-0 flex flex-col 
-        ${expand ? "w-[75%] h-[100%] visible" : " hidden"}`}
+        className={`bg-[#1B1107] border-[#DCB288] border-2 md:border-8 md:border-l-0 flex flex-col 
+        ${expand ? "w-full md:w-[75%] h-[100%] visible" : " hidden"}`}
       >
-        <nav className="w-full flex justify-center p-4 text-[#DCB288] text-3xl">
+        <nav className="w-full flex justify-center p-4 text-[#DCB288] text-lg md:text-3xl">
           <ul className="flex justify-around w-[60%] ">
             <li
               onClick={() => setMemberInfo("home")}
@@ -118,7 +149,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
           </ul>
         </nav>
 
-        <div className="px-8 h-[100%] overflow-auto scrollbar-hide ">
+        <div className="md:px-8 h-[100%] overflow-auto scrollbar-hide ">
           {memberInfo === "home" ? <Home teamMember={teamMember} /> : null}
           {memberInfo === "about" ? <About teamMember={teamMember} /> : null}
           {memberInfo === "education" ? (
@@ -136,12 +167,12 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 
 function Home({ teamMember }) {
   return (
-    <div className="w-full h-[100%] px-8 py-10 flex flex-col justify-center text-[#DCB288] text-3xl leading-snug">
+    <div className="w-full h-[100%] md:px-8 md:py-10 flex flex-col justify-center text-[#DCB288] md:text-3xl leading-snug">
       <div className="w-full">
-        <h2 className="text-center text-5xl font-extrabold">
+        <h2 className="text-center text-3xl md:text-5xl font-extrabold">
           {teamMember.name}
         </h2>
-        <h3 className="text-center text-3xl font-extralight mt-4">
+        <h3 className="text-center md:text-3xl font-extralight mt-4">
           {teamMember.role}
         </h3>
       </div>
@@ -150,11 +181,11 @@ function Home({ teamMember }) {
 }
 function About({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
         <div>
-          <h2 className="text-4xl font-extrabold px-4">About Me</h2>
-          <p className="my-4 pb-2 px-4 whitespace-pre-line">
+          <h2 className="text-2xl md:text-4xl font-extrabold px-4">About Me</h2>
+          <p className="my-4 pb-2 px-4 whitespace-pre-line text-sm md:text-base">
             {teamMember.aboutMe}
           </p>
         </div>
@@ -162,9 +193,11 @@ function About({ teamMember }) {
           <div className="flex flex-col justify-center items-center basis-1/2 h-[100%]">
             <h3 className="font-bold">Hard Skills</h3>
             {teamMember.hardSkills.map((hSkill) => (
-              <div className="p-1 mt-2 w-[80%] border-2 rounded-full border-[#DCB288]">
-                <div className="px-2 py-1 text-center rounded-full bg-[#DCB288]">
-                  <h3 className="text-[#1B1107] text-sm font-bold">{hSkill}</h3>
+              <div className="p-1 mt-2 w-[80%] border-2 rounded-3xl md:rounded-full border-[#DCB288]">
+                <div className="px-2 py-1 text-center rounded-2xl md:rounded-full bg-[#DCB288] h-[30px] md:h-auto flex items-center justify-center">
+                  <h3 className="text-[#1B1107] text-xs md:text-sm  font-bold leading-3">
+                    {hSkill}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -172,9 +205,11 @@ function About({ teamMember }) {
           <div className="flex flex-col justify-center items-center basis-1/2 h-[100%]">
             <h3 className="font-bold">Soft Skills</h3>
             {teamMember.softSkills.map((sSkill) => (
-              <div className="p-1 mt-2 w-[80%] border-2 rounded-full border-[#DCB288]">
-                <div className="px-2 py-1 text-center rounded-full bg-[#DCB288]">
-                  <h3 className="text-[#1B1107] text-sm font-bold">{sSkill}</h3>
+              <div className="p-1 mt-2 w-[80%] border-2 rounded-3xl md:rounded-full border-[#DCB288]">
+                <div className="px-2 py-1 text-center rounded-2xl md:rounded-full bg-[#DCB288] h-[30px] md:h-auto flex items-center justify-center">
+                  <h3 className="text-[#1B1107] text-xs md:text-sm font-bold leading-3">
+                    {sSkill}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -202,16 +237,16 @@ function Education({ teamMember }) {
   ];
 
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold px-4">Education</h2>
+        <h2 className="text-2xl md:text-4xl font-extrabold px-4">Education</h2>
 
         {teamMember.education.map((school) => (
           <div
             className="my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
             key={school.degree}
           >
-            <h2 className="text-xl font-bold">{school.degree}</h2>
+            <h2 className="text-lg md:text-xl font-bold">{school.degree}</h2>
             <h3>
               <span>{school.schoolName}</span>・<span>{school.location}</span>
             </h3>
@@ -231,11 +266,16 @@ function Education({ teamMember }) {
             </h3>
 
             <div>
-              <p className="mt-4 whitespace-pre-line">{school.description}</p>
+              <p className="mt-4 whitespace-pre-line text-sm md:text-base">
+                {school.description}
+              </p>
               <p className="mt-4">
                 <span className="font-bold">Skills: </span>
                 {school.skills.map((skill) => (
-                  <span key={skill}> ・{skill}・ </span>
+                  <span className="text-sm md:text-base" key={skill}>
+                    {" "}
+                    ・{skill}・{" "}
+                  </span>
                 ))}
               </p>
             </div>
@@ -272,16 +312,16 @@ function Work({ teamMember }) {
     return `${years} yr ${months} mos`;
   }
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold px-4">Work</h2>
+        <h2 className="text-2xl md:text-4xl font-extrabold px-4">Work</h2>
 
         {teamMember.work.map((job) => (
           <div
             className="my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
             key={job.title}
           >
-            <h2 className="text-xl font-bold">{job.title}</h2>
+            <h2 className="text-lg md:text-xl font-bold">{job.title}</h2>
             <h3>
               <span>{job.companyName}</span>・<span>{job.employmentType}</span>
             </h3>
@@ -305,11 +345,16 @@ function Work({ teamMember }) {
             </h3>
 
             <div>
-              <p className="mt-4 whitespace-pre-line">{job.description}</p>
+              <p className="mt-4 whitespace-pre-line text-sm md:text-base">
+                {job.description}
+              </p>
               <p className="mt-4">
                 <span className="font-bold">Skills: </span>
                 {job.skills.map((skill) => (
-                  <span key={skill}> ・{skill}・ </span>
+                  <span className="text-sm md:text-base" key={skill}>
+                    {" "}
+                    ・{skill}・{" "}
+                  </span>
                 ))}
               </p>
             </div>
@@ -322,10 +367,10 @@ function Work({ teamMember }) {
 }
 function Contact({ teamMember }) {
   return (
-    <div className="w-full  h-[100%] px-8 py-10 flex flex-col text-[#DCB288] text-base leading-snug">
+    <div className="w-full  h-[100%] md:px-8 md:py-10 flex flex-col text-[#DCB288] text-base leading-snug">
       <div className="w-full">
-        <h2 className="text-4xl font-extrabold px-4">Contact</h2>
-        <p className="mt-6 text-xl whitespace-pre-line"></p>
+        <h2 className="text-2xl md:text-4xl font-extrabold px-4">Contact</h2>
+        <p className="mt-6 text-sm md:text-base lg:text-xl whitespace-pre-line"></p>
       </div>
       <div className="w-full"></div>
     </div>

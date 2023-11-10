@@ -17,18 +17,18 @@ function Header() {
   }, []);
 
   return (
-    <div className="w-full p-[15px] md:p-[30px] xl:px-[120px] bg-[#1B1107]">
+    <div className="w-full p-[15px] md:p-[20px] xl:px-[120px] bg-[#1B1107]">
       <div
-        className="flex justify-between	  items-center text-white"
+        className="flex justify-between	items-center text-white"
         style={{ border: "2px solid #FBFCFB" }}
       >
         <div className="flex justify-center items-center">
           <img
             src={DishDiveLogoWhite}
             alt="Dish Dive Logo"
-            className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
+            className="w-10 h-10 m-3.5 md:w-[50px] md:h-[50px] md:m-5"
           />
-          <h1 className="text-lg md:text-[28px] ml-8 md:ml-7 lg:text-[40px]">
+          <h1 className="text-lg md:text-[28px] ml-8 md:ml-7 lg:text-[36px]">
             DISH DIVE
           </h1>
         </div>
@@ -53,7 +53,7 @@ function Header() {
               <li className="md:ml-8 text-xl md:my-0 my-7 ">
                 <NavLink
                   to="/"
-                  className="text-base lg:text-[28px]"
+                  className="text-base lg:text-[24px]"
                   onClick={toggleMenuIcon}
                 >
                   Home
@@ -62,7 +62,7 @@ function Header() {
               <li className="md:ml-8 text-xl md:my-0 my-7 lg:text-[28px]">
                 <NavLink
                   to="/about"
-                  className="text-base lg:text-[28px]"
+                  className="text-base lg:text-[24px]"
                   onClick={toggleMenuIcon}
                 >
                   About
@@ -71,7 +71,7 @@ function Header() {
               <li className="md:ml-8 text-xl md:my-0 my-7 lg:text-[28px]">
                 <NavLink
                   to="/team"
-                  className="text-base lg:text-[28px]"
+                  className="text-base lg:text-[24px]"
                   onClick={toggleMenuIcon}
                 >
                   Team
@@ -79,14 +79,18 @@ function Header() {
               </li>
 
               <li className="md:ml-8">
-                <img src={Line} alt="" className=" hidden md:inline-block" />
+                <img
+                  src={Line}
+                  alt=""
+                  className=" hidden md:inline-block h-[50px]"
+                />
               </li>
 
               <li className="md:ml-8 text-xl md:my-0 my-7">
                 <img
                   src={SwitchBtn}
                   alt=""
-                  className="md:mr-7 cursor-pointer w-[60px] lg:w-[75px]"
+                  className="md:mr-7 cursor-pointer w-10 lg:w-[50px]"
                 />
               </li>
             </ul>

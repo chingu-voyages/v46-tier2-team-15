@@ -8,6 +8,10 @@
   --hover-color: #e69239;
 }
 
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
 html,
 body {
   font-family: sans-serif;
@@ -56,7 +60,6 @@ a.active {
   background-color: #efdfc5;
   color: #1b1107;
   overflow-y: scroll;
-  padding: 1.5rem;
   position: absolute;
   z-index: 10;
 }
@@ -74,7 +77,6 @@ a.active {
   letter-spacing: 0.1rem;
   font-family: var(--secondary-font);
   color: var(--hover-color);
-  font-size: 1.2rem;
 }
 
 .recipe-pop-up .group {
@@ -125,7 +127,7 @@ a.active {
 }
 
 .paginationBtns {
-  color: #f1f3f8;
+  color: #1b1107;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -134,12 +136,12 @@ a.active {
   margin: 0px auto;
   font-size: 1.1rem;
   font-family: var(--primary-font);
-  background-color: #232931;
+  background-color: #efdfc5;
 }
 
 .paginationBtns li {
   letter-spacing: 0.1rem;
-  border: none;
+  font-size: 16px;
 }
 
 .paginationBtns li a {
@@ -149,22 +151,21 @@ a.active {
 }
 
 .paginationBtns li a:hover {
-  background-color: #f1f3f8;
-  color: black;
-}
-
-.paginationActive a {
   background-color: var(--hover-color);
   color: black;
 }
 
-@media only screen and (max-width: 860px) {
-  .recipe-pop-up h2 {
-    font-size: 1.3rem;
+.paginationActive a {
+  background-color: #dcb288;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .paginationBtns li {
+    font-size: 14px;
   }
 
-  .recipe-pop-up .topic {
-    font-size: 1rem;
-    letter-spacing: 0.15rem;
+  .paginationBtns li a {
+    padding: 0.5rem 0.75rem;
   }
 }

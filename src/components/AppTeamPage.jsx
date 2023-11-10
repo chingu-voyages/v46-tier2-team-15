@@ -22,14 +22,14 @@ function AppTeamPage() {
   });
 
   return (
-    <div className="w-full h-[100%] overflow-auto scrollbar-hide flex flex-col bg-[#1B1107] px-[120px]">
+    <div className="w-full h-[100%] overflow-auto scrollbar-hide flex flex-col bg-[#1B1107] px-[10px] md:px-[120px]">
       <div className={`${visibility ? "visible " : "hidden"}`}>
-        <h2 className="mb-4 text-[#DCB288] text-4xl text-center">
+        <h2 className="mb-4 text-[#DCB288] text-xl md:text-2xl lg:text-4xl text-center font-bold">
           The team behind the App
         </h2>
-        <p className="mb-4 mx-12 text-[#DCB288] text-xl text-center">
+        <p className="mb-4 mx-12 text-[#DCB288] lg:text-xl text-center">
           Feel free to get to know the amazing people behind the Dish Dive App.
-          Check their GitHub repos or Linked in profiles to get to know them.
+          Check their GitHub repos or LinkedIn profiles to get to know them.
         </p>
       </div>
       <div

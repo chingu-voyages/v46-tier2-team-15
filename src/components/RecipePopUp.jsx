@@ -26,14 +26,15 @@ function RecipePopUp({ data, closeRecipePopUp }) {
     const { label, mealType, ingredients, totalNutrients, url } = data;
     const nutrientArray = Object.values(totalNutrients);
     return (
-      <div className="recipe-pop-up top-[90px] md:top-40 bottom-[40px] w-[290px] sm:w-[610px] md:w-[706px] lg:w-[964px] xl:w-[1038px] vertical-scroll">
+      // <div className="recipe-pop-up top-[100px] md:top-[133px] bottom-[40px] w-[290px] sm:w-[610px] md:w-[706px] lg:w-[964px] xl:w-[1038px] vertical-scroll">
+      <div className="recipe-pop-up top-[100px] md:top-[133px] bottom-[40px] w-[290px]  sm:w-2/4 vertical-scroll px-[0.1rem] py-[1.5rem] md:p-[1.5rem]">
         <button
           onClick={() => closeRecipePopUp()}
           className="exit-btn text-2xl absolute right-6 top-6 bg-transparent border-none outline-none cursor-pointer"
         >
           <RxCross1 />
         </button>
-        <h2 className="m-4 text-2xl">{label}</h2>
+        <h2 className="m-4 text-[16px] md:text-[18px] font-bold">{label}</h2>
 
         {/* check if mealType is present in the response or not. */}
         {mealType ? (
@@ -41,7 +42,10 @@ function RecipePopUp({ data, closeRecipePopUp }) {
             {mealType.map((type) => {
               const id = uuidv4();
               return (
-                <p className="border-none w-fit tracking-widest" key={id}>
+                <p
+                  className="border-none w-fit tracking-widest text-[12px] md:text-[14px]"
+                  key={id}
+                >
                   {type}
                 </p>
               );
@@ -60,13 +64,17 @@ function RecipePopUp({ data, closeRecipePopUp }) {
         {/* check if ingredients is present in the response or not. */}
         {ingredients ? (
           <div className="group ingredients">
-            <h3 className="topic">
+            <h3 className="topic text-sm md:text-base">
               <FaAngleDoubleRight />
               Ingredients
             </h3>
             {ingredients.map((ingredient) => {
               const id = uuidv4();
-              return <p key={id}>{ingredient.text}</p>;
+              return (
+                <p className="text-[12px] md:text-[14px]" key={id}>
+                  {ingredient.text}
+                </p>
+              );
             })}
           </div>
         ) : (
@@ -83,7 +91,7 @@ function RecipePopUp({ data, closeRecipePopUp }) {
         {totalNutrients ? (
           <div className="group Nutrients">
             <div>
-              <h3 className="topic">
+              <h3 className="topic text-sm md:text-base">
                 <FaAngleDoubleRight />
                 Nutrients
               </h3>
@@ -92,7 +100,10 @@ function RecipePopUp({ data, closeRecipePopUp }) {
               {nutrientArray.map((nutrient) => {
                 const id = uuidv4();
                 return (
-                  <p className="nutrient p-[0.2rem]" key={id}>
+                  <p
+                    className="nutrient p-[0.2rem] text-[12px] md:text-[14px]"
+                    key={id}
+                  >
                     {nutrient.label}
                   </p>
                 );
@@ -112,7 +123,7 @@ function RecipePopUp({ data, closeRecipePopUp }) {
         {url ? (
           <div className="group url">
             <a
-              className="p-4 tracking-widest mb-4 mx-2 inline-block"
+              className="p-2 md:p-3 tracking-widest mb-4 mx-2 inline-block text-[12px] md:text-[16px]"
               target="_blank"
               href={url}
             >
@@ -120,7 +131,12 @@ function RecipePopUp({ data, closeRecipePopUp }) {
             </a>
 
             <div className="w-fit m-auto">
-              <p>Share this recipe with friends</p>
+              <p
+                style={{ color: "var(--hover-color)" }}
+                className="text-[14px] md:text-[16px]"
+              >
+                Share this recipe with friends
+              </p>
 
               <div className="w-fit m-auto">
                 <FacebookShareButton url={url} className="mx-1" quote={label}>
