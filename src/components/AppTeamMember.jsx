@@ -33,7 +33,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
         ${
           expand
             ? "h-[100px] md:h-auto flex-row	justify-between items-center md:flex-col md:w-[25%]  border-2 md:border-8 md:h-auto"
-            : "flex-col w-[12rem] md:h-[18rem] border-4 h-full"
+            : "flex-col w-[12.5rem] md:h-[19rem] border-4 h-full"
         }`}
       >
         <div className="card-center md:w-full md:h-full">
@@ -61,15 +61,15 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
 
         <div className="member-detail h-full m-2 flex flex-col items-center">
           <h2
-            className={`font-bold ${
+            className={`member-name font-bold ${
               expand
-                ? "mt-0 md:mt-[-15%]  text-lg md:text-3xl lg:text-4xl mt-2"
-                : "text-xl mt-[-15%]"
+                ? "mt-0 md:mt-[-15%]  text-lg md:text-3xl lg:text-2xl mt-2"
+                : "text-[18px] mt-[-15%]"
             }`}
           >
             {teamMember.name}
           </h2>
-          <h3 className={`${expand ? "text-sm md:text-xl mt-2" : "text-xs"}`}>
+          <h3 className={`${expand ? "text-sm md:text-xl mt-2" : "text-[14px]"}`}>
             {teamMember.role}
           </h3>
           <ul
@@ -96,7 +96,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
         </div>
         <button
           onClick={toggleExpand}
-          className={`md:w-full toggle-btn
+          className={`md:w-full toggle-btn 
           ${
             expand
               ? "w-[20%] md:w-full md:px-4 md:p-2  border-2 text-base md:border-4 md:text-2xl"

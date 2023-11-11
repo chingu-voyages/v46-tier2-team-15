@@ -27,7 +27,7 @@ function AppTeamPage() {
         <h2 className="intro-header mb-4 text-[#DCB288] text-xl md:text-2xl lg:text-4xl text-center font-bold">
           The team behind the App
         </h2>
-        <p className="intro mb-4 mx-12 text-[#DCB288] lg:text-xl text-center">
+        <p className="intro mb-4 mx-12 text-[#DCB288] lg:text-[18px] text-center">
           Feel free to get to know the amazing people behind the Dish Dive App.
           Check their GitHub repos or LinkedIn profiles to get to know them.
         </p>
