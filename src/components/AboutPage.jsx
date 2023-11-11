@@ -2,6 +2,7 @@ import { contents } from "../data/aboutPageContent";
 import { ThemeContext } from '../App';
 import { useContext } from "react";
 
+
 /*
 This page will open between Header and Footer and 
 it will be a page about the Dish Dive App.
@@ -24,7 +25,7 @@ function AboutPage() {
   return (
     <div className="w-full h-[100%] flex flex-col overflow-auto scrollbar-hide">
       {/* <div className="w-full bg-[#1B1107] "> */}
-        <div className={`px-[60px] md:px-[80px] py-[32px] xl:px-[120px] pb-[100px] ${theme === 'dark' ? 'bg-[url(\'/src/assets/page-images/About-bg-dark.jpeg\')]' : 'bg-[url(\'/src/assets/page-images/About-bg-light.jpeg\')]' }  bg-cover`}>
+        <div className={`px-[60px] md:px-[80px] py-[32px] xl:px-[120px] pb-[100px] ${theme === 'dark' ? 'bg-[url(../src/assets/page-images/AboutBgDark.jpeg)]' : 'bg-[url(../src/assets/page-images/AboutBgLight.jpeg)]' }  bg-cover`}>
         
           {contentsArray}
         {/* </div> */}
