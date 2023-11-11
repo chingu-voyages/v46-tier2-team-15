@@ -27,9 +27,9 @@ function Header() {
   }, []);
 
   return (
-    <div className=" header w-full p-[15px] md:p-[20px] xl:px-[120px]">
+    <div className=" header w-full p-[15px] md:p-[20px] xl:px-[60px]">
       <div
-        className="header-border flex justify-between	items-center"
+        className="header-border h-[4rem] sm:h-[4rem] md:h-[6rem] flex justify-between	items-center"
       >
         <div className="flex justify-center items-center">
           {theme === 'light' ?  <img
