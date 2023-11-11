@@ -19,7 +19,7 @@ const SortingList = ({ handleSortChange }) => {
 
   return (
     <>
-      <div className="sorting-list flex items-center justify-center w-fit px-4 h-auto mx-auto my-8 flex-wrap">
+      <div className="sorting-list flex items-center justify-center text-[14px] md:text-[14px] lg:text-[16px] w-fit px-4 h-auto mx-auto my-8 flex-wrap">
         {mealTypeArray.map((mealType) => {
           const id = uuidv4();
           const {value , label} = mealType

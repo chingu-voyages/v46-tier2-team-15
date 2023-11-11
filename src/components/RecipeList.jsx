@@ -85,8 +85,7 @@ function RecipeList({ recipes, loading, searchPerformed, sortBy }) {
 
       {loading ? (
         <div className=" text-center mt-3">
-          <p>Loading</p>
-          <br />
+      <div className="loader"></div>
         </div>
       ) : null}
 

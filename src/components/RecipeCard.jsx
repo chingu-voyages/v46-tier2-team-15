@@ -24,7 +24,7 @@ function RecipeCard({ recipe, getRecipe, id }) {
       </div>
 
       <div className="recipe-label-div min-h-[4rem] h-auto w-full">
-        <h3 className="recipe-label font-semibold text-[14px] md:text-[16px] ">
+        <h3 className="recipe-label font-semibold text-[15px] md:text-[16px] ">
           {label}
         </h3>
       </div>
@@ -32,15 +32,15 @@ function RecipeCard({ recipe, getRecipe, id }) {
       <div className="more-details flex flex-col items-start justify-around self-start my-1 bottom-14">
         <div className="cuisin flex items-center p-1">
           <ImEarth />
-          <p className="recipe-cuisineType tracking-wider py-0 px-2 capitalize text-xs md:text-base">
+          <p className="recipe-cuisineType tracking-wider py-0 px-2 capitalize text-sm md:text-base">
             {cuisineType}
           </p>
         </div>
 
         <div className="calories flex items-center p-1">
           <TbHealthRecognition />
-          <p className="recipe-cuisineType tracking-wider py-0 px-2 capitalize text-xs md:text-base">
-            {caloriesRound} Kcals
+          <p className="recipe-cuisineType tracking-wider py-0 px-2 capitalize text-sm md:text-base">
+            {caloriesRound}Kcals
           </p>
         </div>
       </div>
