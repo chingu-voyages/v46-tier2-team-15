@@ -191,6 +191,28 @@ a.active {
   border-radius: 2rem;
 }
 
+/* Loader */
+
+.loader {
+  margin: 3rem auto;
+  border: 0.6rem solid var(--secondary-color);
+  border-radius: 50%;
+  border-top: 0.6rem solid var(--hover-color);
+  width: 5rem;
+  height: 5rem;
+  animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* recipe-pop-up */
 .recipe-pop-up {
   background-color: var(--text-color);
@@ -214,7 +236,7 @@ a.active {
   letter-spacing: 0.1rem;
   font-family: var(--secondary-font);
   color: var(--hover-color);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .recipe-pop-up .group {
