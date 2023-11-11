@@ -336,8 +336,12 @@ a.active {
   border-color: var(--secondary-color);
 }
 
-.atm-card{
-    border: 4px solid #c1c1c1;
+#light .atm-card{
+    border-color: #c1c1c1;
+}
+
+#dark .atm-card {
+  border-color: var(--secondary-color);
 }
 
 .member-image{
@@ -374,11 +378,12 @@ a.active {
 }
 
 #light .big-atm-card{
-  border: transparent;
-  background-color: #EAE4E4;
+    border-color: #c1c1c1;
+    background-color: #EAE4E4;
   color: black;
 }
 
 .big-atm-card{
   color: var(--text-color);
+  border-color: var(--secondary-color) ;
 }
