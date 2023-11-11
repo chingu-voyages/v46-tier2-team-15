@@ -112,7 +112,7 @@ function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
       </div>
       {/* Right big card */}
       <div
-        className={`big-atm-card bg-[#1B1107] border-[#DCB288] border-2 md:border-8 md:border-l-0 flex flex-col 
+        className={`big-atm-card pb-6 bg-[#1B1107]  border-2 md:border-8 md:border-l-0 flex flex-col 
         ${expand ? "w-full md:w-[75%] h-[100%] visible" : " hidden"}`}
       >
         <nav className="w-full flex justify-center p-4 text-lg md:text-3xl">
