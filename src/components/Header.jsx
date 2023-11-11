@@ -62,7 +62,7 @@ function Header() {
                 isOpen ? "top-[90px] " : "top-[-490px]"
               }`}
             >
-              <li className="md:ml-8 text-xl md:my-0 my-7 ">
+              <li className="md:ml-8 text-xl md:my-0 my-7 lg:text-[28px] ">
                 <NavLink
                   to="/"
                   className="text-base lg:text-[24px]"
@@ -98,13 +98,13 @@ function Header() {
                 /> */}
                 <div className="line"></div>
               </li>
-                <li className="md:ml-8 text-xl md:my-0 my-7">
+                <li className="pt-3 md:ml-8 md:my-0 my-7">
                 {theme === 'light' ? (
-                <button onClick={toggleTheme} className="md:mr-7 cursor-pointer w-10 lg:w-[50px]">
+                <button onClick={toggleTheme} className="md:mr-7 lg:w-[50px]">
                   <PiMoonStarsFill  size={26}  />
                   </button>
                 ) : (
-                <button onClick={toggleTheme} className="md:mr-7 cursor-pointer w-10 lg:w-[50px]">
+                <button onClick={toggleTheme} className="md:mr-7 lg:w-[50px]">
                     <RiSunFill size={26} />
                 </button>
                 )}
