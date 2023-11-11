@@ -29,42 +29,43 @@ const contributors = [
     ],
     work: [
       {
-        title: "Some Job Position",
+        title: "Freelancer",
         companyName: "Some Company Name",
         // Full Time / Part Time / Internship / Volunteer Work / Project
         employmentType: "Full Time",
         // Date parameters year, month -1, day if it is endData and you are still working put "Present"
         startDate: new Date(2022, 6 - 1, 1),
         endDate: "Present",
-        location: "Some Country Name",
+        location: "India",
         // On-Site / Remote / Hybrid
-        locationType: "On-Site",
+        locationType: "Remote",
         description:
-          "Description of what you did, accomplishments, learn, etc.",
+          "In my journey of acquiring digital expertise, I've honed a versatile skill set encompassing Testing and Debugging, HTML, CSS, and JavaScript. These fundamental languages serve as the backbone of my project development.\n\n  Crafting seamless user experiences became second nature as I delved into Responsive Design, ensuring optimal functionality across various devices. Venturing into the dynamic realm of React JS elevated my projects to new heights, enabling me to create interactive and efficient web applications. The iterative process of Testing and Debugging emerged as a crucial phase, refining my coding precision and enhancing the overall reliability of my creations. \n\nParticipating in collaborative endeavors, particularly in group projects, has fortified my arsenal of soft skills. Communication, an essential pillar, was honed through constant interaction with team members. Adapting to diverse perspectives and fostering teamwork polished my interpersonal skills, while leadership opportunities cultivated a sense of responsibility. These experiences, coupled with time management and problem-solving, have collectively sculpted my professional demeanor.",
         skills: [
-          "1st skill",
-          "2nd skill",
-          "3rd skill",
-          "4th skill",
-          "5th skill",
+          "Testing and Debugging",
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "Responsive Design",
+          "React JS"
         ],
       },
     ],
     education: [
       {
-        degree: "Name of The Degree or Certificate etc",
-        schoolName: "School or Issuer of The Degree/Certificate",
+        degree: "B.Tech In Computer Science & Engineering",
+        schoolName: "Parul University",
         // Date parameters year, month -1, day if it is endData and you are still studying put "Present"
-        startDate: new Date(2022, 9 - 1, 1),
-        endDate: "Present",
-        location: "Some Country Name",
-        description: "Description of what you learned, accomplishments, etc.",
+        startDate: new Date(2018, 9 - 4, 1),
+        endDate: new Date(2022, 9 - 4, 1),
+        location: "India",
+        description: "Completing my B.Tech degree in Computer Science and Engineering has been a transformative journey, not only enriching my technical prowess but also nurturing a spectrum of soft skills vital for holistic professional growth. Through rigorous coursework, I cultivated analytical thinking, problem-solving, and attention to detail, essential in the realm of computer science. Beyond the binaries and algorithms, my involvement in numerous cultural activities fostered creativity, adaptability, and effective communication. Leading and participating in cultural events honed my leadership, teamwork, and organizational skills. This amalgamation of technical acumen and soft skills positions me as a well-rounded professional ready to contribute dynamically to the ever-evolving landscape of technology.",
         skills: [
-          "1st skill",
-          "2nd skill",
-          "3rd skill",
-          "4th skill",
-          "5th skill",
+          "Problem Solving",
+          "Team Collaboration",
+          "Time Management",
+          "Attention to Detail",
+          "Continuous Learning ",
         ],
       },
     ],
