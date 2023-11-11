@@ -23,7 +23,7 @@ const SearchBar = ({ search }) => {
       >
         <input
           type="search"
-          className="search-input w-[70vw] mb-[20px] md:m-0 block  flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1 md:px-6 md:py-2.5 text-sm sm:text-base font-normal leading-[1.6] text-white outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-white focus:shadow-[inset_0_0_0_1px_rgb(255,255,255)] focus:outline-none focus:placeholder:opacity-0	 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+          className="search-input w-[75vw] mb-[20px] md:m-0 block  flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1 md:px-6 md:py-2.5 text-sm sm:text-base font-normal leading-[1.6] text-white outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-white focus:shadow-[inset_0_0_0_1px_rgb(255,255,255)] focus:outline-none focus:placeholder:opacity-0	 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
           placeholder="Enter comma separated ingredients"
           aria-label="Search"
           aria-describedby="button-addon3"
