@@ -105,6 +105,10 @@ a.active {
   background-color: var(--primary-color);
 }
 
+.about-text{
+  color: var(--text-color);
+}
+
 .footer {
   background-color: var(--primary-color);
   color: var(--text-color);
