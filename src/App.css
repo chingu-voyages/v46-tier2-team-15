@@ -409,3 +409,22 @@ a.active {
   color: var(--text-color);
   border-color: var(--secondary-color) ;
 }
+
+
+#dark .skills-bg {
+  background-color: #DCB288;
+}
+
+#light .skills-div{
+  border-color: #c1c1c1;
+}
+
+#light .skills-bg {
+  background-color: #c1c1c1;
+  color: var(--text-color);
+}
+
+#light .work-div,
+#light .education-div{
+  border-color: var(--hover-color);
+}
