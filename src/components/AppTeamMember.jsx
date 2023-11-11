@@ -3,7 +3,10 @@ This page will open as a pop up in front of the App Team Page and
 it will be a page about a team member.
 */
 import React from "react";
-import '../App.css'
+import '../App.css';
+import { ThemeContext } from '../App';
+import { useEffect, useState, useContext } from "react";
+
 
 import { FaHome } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
@@ -12,6 +15,8 @@ import { FaBriefcase } from "react-icons/fa6";
 import { FaAddressBook } from "react-icons/fa6";
 
 function AppTeamMember({ teamMember, visibility, toggleVisibility }) {
+  const themeData = useContext(ThemeContext);
+  const {theme , toggleTheme} = themeData;
   const [expand, setExpand] = React.useState(false);
   const [memberInfo, setMemberInfo] = React.useState("home");
   const transition = "";
@@ -194,8 +199,8 @@ function About({ teamMember }) {
           <div className="flex flex-col justify-center items-center basis-1/2 h-[100%]">
             <h3 className="font-bold">Hard Skills</h3>
             {teamMember.hardSkills.map((hSkill) => (
-              <div className="p-1 mt-2 w-[80%] border-2 rounded-3xl md:rounded-full border-[#DCB288]">
-                <div className="px-2 py-1 text-center rounded-2xl md:rounded-full bg-[#DCB288] h-[30px] md:h-auto flex items-center justify-center">
+              <div className="skills-div p-1 mt-2 w-[80%] border-2 rounded-3xl md:rounded-full border-[#DCB288]">
+                <div className="skills-bg px-2 py-1 text-center rounded-2xl md:rounded-full bg-[#DCB288] h-[30px] md:h-auto flex items-center justify-center">
                   <h3 className="text-[#1B1107] text-xs md:text-sm  font-bold leading-3">
                     {hSkill}
                   </h3>
@@ -206,8 +211,8 @@ function About({ teamMember }) {
           <div className="flex flex-col justify-center items-center basis-1/2 h-[100%]">
             <h3 className="font-bold">Soft Skills</h3>
             {teamMember.softSkills.map((sSkill) => (
-              <div className="p-1 mt-2 w-[80%] border-2 rounded-3xl md:rounded-full border-[#DCB288]">
-                <div className="px-2 py-1 text-center rounded-2xl md:rounded-full bg-[#DCB288] h-[30px] md:h-auto flex items-center justify-center">
+              <div className="skills-div p-1 mt-2 w-[80%] border-2 rounded-3xl md:rounded-full border-[#DCB288]">
+                <div className="skills-bg bg-[#DCB288] px-2 py-1 text-center rounded-2xl md:rounded-full h-[30px] md:h-auto flex items-center justify-center">
                   <h3 className="text-[#1B1107] text-xs md:text-sm font-bold leading-3">
                     {sSkill}
                   </h3>
@@ -244,7 +249,7 @@ function Education({ teamMember }) {
 
         {teamMember.education.map((school) => (
           <div
-            className="my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
+            className="education-div my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
             key={school.degree}
           >
             <h2 className="text-lg md:text-xl font-bold">{school.degree}</h2>
@@ -319,7 +324,7 @@ function Work({ teamMember }) {
 
         {teamMember.work.map((job) => (
           <div
-            className="my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
+            className="work-div my-4 pb-2 px-4 border-b-2 border-[#DCB288]"
             key={job.title}
           >
             <h2 className="text-lg md:text-xl font-bold">{job.title}</h2>
