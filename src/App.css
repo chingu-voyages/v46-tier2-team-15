@@ -164,6 +164,22 @@ a.active {
   color: var(--text-color);
 }
 
+.app-team-members-div h2{
+  font-family: var(--primary-font);
+}
+
+.app-team-members-div p {
+  font-family: var(--secondary-font);
+}
+
+.atm-card{
+  font-family: var(--secondary-font);
+}
+
+.atm-card .member-name{
+  font-family: var(--secondary-font);
+}
+
 /* SortingList */
 
 .sorting-btn {
