@@ -7,7 +7,8 @@
 :root{
   --primary-font:'Sansita Swashed',
     cursive;
-  --secondary-font: 'Teko', sans-serif;
+  --secondary-font: 'Roboto Mono',
+    monospace;
 }
 
 #dark {
@@ -48,6 +49,11 @@ a.active {
   font-family: var(--primary-font);
 }
 
+.sitename{
+  letter-spacing: 0.15rem;
+  text-shadow: 2px 2px var(--hover-color);
+}
+
 .header-border {
   border: 2px solid var(--text-color);
 }
@@ -69,12 +75,36 @@ a.active {
 }
 
 
+
 #light .intro-text{
   color: white;
 }
 
 .img-bg {
   background-color: var(--img-background-color)
+}
+
+.landing-page{
+  font-family: var(--secondary-font);
+}
+
+.landing-page .intro-text{
+    font-family: var(--primary-font);
+    letter-spacing: 0.05rem;
+}
+
+.search-input{
+  font-family: var(--secondary-font);
+}
+
+.about-header{
+  font-family: var(--primary-font);
+
+}
+
+.about-text{
+  font-family: var(--secondary-font);
+  font-family: 1rem
 }
 
 .recipe-card img {
@@ -91,6 +121,8 @@ a.active {
 
 .recipe-label{
   font-size: 1rem;
+  font-family: var(--primary-font);
+  letter-spacing: 0.1rem;
 }
 
 .landing-page {
@@ -114,6 +146,13 @@ a.active {
 .about-text{
   color: var(--text-color);
 }
+
+/* .dark-bg {
+  background-image: url(../src/assets/page-images/AboutBgDark.jpeg);
+}
+
+.light-bg {
+  background-image: url(../src/assets/page-images/AboutBgLight.jpeg);} */
 
 .footer {
   background-color: var(--primary-color);
