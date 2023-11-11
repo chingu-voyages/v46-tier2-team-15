@@ -41,8 +41,8 @@ function Header() {
             alt="Dish Dive Logo"
             className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
           />}
-          <h1 className="text-lg md:text-[28px] ml-8 md:ml-7 lg:text-[36px]">
-            DISH DIVE
+          <h1 className="sitename text-2xl ml-0 md:text-[28px] ml-8 md:ml-7 lg:text-[36px]">
+            DishDive
           </h1>
         </div>
 
