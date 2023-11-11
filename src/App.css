@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root{
+  --primary-font:'Sansita Swashed',
+    cursive;
+  --secondary-font: 'Teko', sans-serif;
+}
+
 #dark {
   --primary-color: #1B1107;
   --secondary-color: #DCB288;
@@ -34,21 +40,16 @@ body {
 }
 
 a.active {
-  font-weight: bold;
-  border-bottom: 1px solid #fff;
+  color: var(--hover-color);
 }
 .header {
   background-color: var(--primary-color);
   color: var(--text-color);
+  font-family: var(--primary-font);
 }
 
 .header-border {
   border: 2px solid var(--text-color);
-}
-
-a.active {
-  font-weight: bold;
-  border-bottom: 2px solid var(--text-color);
 }
 
 .line{
@@ -88,9 +89,14 @@ a.active {
   background-color: var(--primary-color);
 }
 
+.recipe-label{
+  font-size: 1rem;
+}
+
 .landing-page {
   background-color: var(--primary-color);
   color: var(--text-color);
+  /* font-family: var(--secondary-font); */
 }
 
 .list-and-pagination{
