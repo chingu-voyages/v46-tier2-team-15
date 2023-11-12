@@ -47,7 +47,7 @@ const contributors = [
           "CSS",
           "JavaScript",
           "Responsive Design",
-          "React JS"
+          "React JS",
         ],
       },
     ],
@@ -59,7 +59,8 @@ const contributors = [
         startDate: new Date(2018, 9 - 4, 1),
         endDate: new Date(2022, 9 - 4, 1),
         location: "India",
-        description: "Completing my B.Tech degree in Computer Science and Engineering has been a transformative journey, not only enriching my technical prowess but also nurturing a spectrum of soft skills vital for holistic professional growth. Through rigorous coursework, I cultivated analytical thinking, problem-solving, and attention to detail, essential in the realm of computer science. Beyond the binaries and algorithms, my involvement in numerous cultural activities fostered creativity, adaptability, and effective communication. Leading and participating in cultural events honed my leadership, teamwork, and organizational skills. This amalgamation of technical acumen and soft skills positions me as a well-rounded professional ready to contribute dynamically to the ever-evolving landscape of technology.",
+        description:
+          "Completing my B.Tech degree in Computer Science and Engineering has been a transformative journey, not only enriching my technical prowess but also nurturing a spectrum of soft skills vital for holistic professional growth. Through rigorous coursework, I cultivated analytical thinking, problem-solving, and attention to detail, essential in the realm of computer science. Beyond the binaries and algorithms, my involvement in numerous cultural activities fostered creativity, adaptability, and effective communication. Leading and participating in cultural events honed my leadership, teamwork, and organizational skills. This amalgamation of technical acumen and soft skills positions me as a well-rounded professional ready to contribute dynamically to the ever-evolving landscape of technology.",
         skills: [
           "Problem Solving",
           "Team Collaboration",
@@ -246,42 +247,36 @@ const contributors = [
     ],
     work: [
       {
-        title: "Some Job Position",
-        companyName: "Some Company Name",
+        title: "Frontend developer Intern",
+        companyName: "Tza.rs",
         // Full Time / Part Time / Internship / Volunteer Work / Project
-        employmentType: "Full Time",
+        employmentType: "Internship",
         // Date parameters year, month -1, day if it is endData and you are still working put "Present"
-        startDate: new Date(2022, 6 - 1, 1),
+        startDate: new Date(2023, 7 - 1, 1),
         endDate: "Present",
-        location: "Some Country Name",
+        location: "Serbia",
         // On-Site / Remote / Hybrid
-        locationType: "On-Site",
+        locationType: "Hybrid",
         description:
-          "Description of what you did, accomplishments, learn, etc.",
-        skills: [
-          "1st skill",
-          "2nd skill",
-          "3rd skill",
-          "4th skill",
-          "5th skill",
-        ],
+          "Improving my own skills and learning a new ones, collaborating with experienced developers from whom I can learn a lot. I also have a wonderful menthor, a senior developer who guides me on my way to ready-to-work in IT industry.",
+        skills: ["JavaScript", "Vue", "GitLab", "Pinia", "Primeflex"],
       },
     ],
     education: [
       {
-        degree: "Name of The Degree or Certificate etc",
-        schoolName: "School or Issuer of The Degree/Certificate",
+        degree: "Bachelor of Traffic Engineering",
+        schoolName: "ICT College of Vocational Studies",
         // Date parameters year, month -1, day if it is endData and you are still studying put "Present"
-        startDate: new Date(2022, 9 - 1, 1),
-        endDate: "Present",
-        location: "Some Country Name",
-        description: "Description of what you learned, accomplishments, etc.",
+        startDate: new Date(2012, 10 - 1, 1),
+        endDate: new Date(2019, 19 - 1, 1),
+        location: "Serbia",
+        description: "",
         skills: [
-          "1st skill",
-          "2nd skill",
-          "3rd skill",
-          "4th skill",
-          "5th skill",
+          "Logistics",
+          "Services",
+          "Finance",
+          "Traffic Engineering",
+          "Transportation",
         ],
       },
     ],
