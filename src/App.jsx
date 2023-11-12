@@ -1,16 +1,27 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { createContext , useState } from "react";
 
 import Header from "./components/Header";
 import AboutPage from "./components/AboutPage";
 import AppTeamPage from "./components/AppTeamPage";
-import SearchPage from "./components/SearchPage";
 import LandingPage from "./components/LandingPage";
 import Footer from "./components/Footer";
 
+export const ThemeContext = createContext(null);
+
+
 function App() {
+
+  const [theme , setTheme] = useState('dark')
+
+  const toggleTheme = () => {
+    setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'))
+  }
+
   return (
-    <div className="w-full h-screen flex flex-col items-center">
+        <ThemeContext.Provider value={{theme , toggleTheme}}>
+    <div className="app w-full h-screen flex flex-col items-center" id={theme}>
       <Router>
         <Header />
 
@@ -18,12 +29,13 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/team" element={<AppTeamPage />} />
-          <Route path="/search" element={<SearchPage />} />
         </Routes>
 
         <Footer />
       </Router>
     </div>
+        </ThemeContext.Provider>
+
   );
 }
 

@@ -1,57 +1,49 @@
-import React, { useEffect, useState } from "react";
-import RecipeList from './RecipeList'
-const SearchBar = () => {
-  const [query, setQuery] = useState("");
-  const [recipes, setRecipes] = useState([]);
-  const [result, setResult] = useState(false);
-  const APP_ID = "69b87f9b";
-  const APP_KEY = "c1555e257f882dc0d5ee81afe169f456";
-  const searchQuery = (e) => {
-    e.preventDefault();
-    fetch(
-      `https://api.edamam.com/api/recipes/v2?type=public&q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setRecipes(data.hits);
-        setResult(true);
+import React, { useState } from "react";
+import SearchIcon from "../assets/page-images/Search-icon.svg";
 
-      })
-      .catch((error) => console.error(error));
+const SearchBar = ({ search }) => {
+  const [query, setQuery] = useState("");
+
+  const searchRecepes = (e) => {
+    e.preventDefault();
+    if (query === "") return;
+    search(query);
+    setQuery("");
   };
+
   const handleQuery = (e) => {
     setQuery(e.target.value);
   };
 
-
   return (
     <div className="mb-3 w-full mx-auto">
       <form
-        className="relative mb-4 flex w-full flex-wrap items-stretch"
-        onSubmit={searchQuery}
+        className=" mb-4 flex flex-col items-center justify-center md:flex md:flex-row w-full"
+        onSubmit={searchRecepes}
       >
         <input
           type="search"
-          className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
-          placeholder="Search"
+          className="search-input w-[75vw] mb-[20px] md:m-0 block  flex-auto rounded-l border border-solid border-neutral-300 bg-transparent bg-clip-padding px-3 py-1 md:px-6 md:py-2.5 text-sm sm:text-base font-normal leading-[1.6] text-white outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-white focus:shadow-[inset_0_0_0_1px_rgb(255,255,255)] focus:outline-none focus:placeholder:opacity-0	 dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
+          placeholder="Enter comma separated ingredients"
           aria-label="Search"
           aria-describedby="button-addon3"
           onChange={handleQuery}
+          value={query}
         />
         <button
-          className="relative z-[2] rounded-r border-2 border-primary px-6 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0"
+          className="md:rounded-l rounded-xl border-2 border-primary px-3 py-2 text-xs font-medium uppercase text-primary transition duration-150 ease-in-out hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 text-white font-jua block"
           type="submit"
           id="button-addon3"
         >
-          Search
+          {" "}
+          <span className="md:hidden">Search</span>
+          <img
+            className="hidden md:inline-block md:w-[25px] md:h-[25px]"
+            src={SearchIcon}
+            alt=""
+          />
         </button>
       </form>
-      {/* {result === false ? "Loading" : recipes} */}
-
-      {result && <RecipeList
-       recipes={recipes}
-       />}
-
     </div>
   );
 };

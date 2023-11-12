@@ -1,50 +1,117 @@
 import { NavLink } from "react-router-dom";
 import DishDiveLogoWhite from "../assets/logo/DishDive_Logo_White.png";
+import DishDiveLogoBlack from "../assets/logo/DishDive_Logo_Black.png";
 import SwitchBtn from "../assets/page-images/Switch.svg";
 import Line from "../assets/page-images/Line.svg";
+// import MenuIcon from "../assets/page-images/menu-icon.png";
+// import CloseMenu from "../assets/page-images/close-menu.png";
+import { useEffect, useState, useContext } from "react";
+import { PiMoonStarsFill } from 'react-icons/pi';
+import { RiSunFill } from 'react-icons/ri';
+import { ThemeContext } from '../App';
+import {PiHamburgerFill} from 'react-icons/pi'
+import {LuUtensilsCrossed} from 'react-icons/lu'
+
+
 
 function Header() {
+  const themeData = useContext(ThemeContext);
+  const {theme , toggleTheme} = themeData;
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenuIcon = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, []);
+
   return (
-    <div
-      className="w-full py-[30px] px-[120px]"
-      style={{ backgroundColor: "#1B1107" }}
-    >
+    <div className=" header w-full p-[15px] md:p-[20px] xl:px-[60px]">
       <div
-        className="flex justify-between	  items-center text-white "
-        style={{ border: "2px solid #FBFCFB" }}
+        className="header-border h-[4rem] sm:h-[4rem] md:h-[6rem] flex justify-between	items-center"
       >
         <div className="flex justify-center items-center">
-          <img
+          {theme === 'light' ?  <img
+            src={DishDiveLogoBlack}
+            alt="Dish Dive Logo"
+            className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
+          /> :  <img
             src={DishDiveLogoWhite}
             alt="Dish Dive Logo"
-            className="w-14 h-14"
-            style={{ margin: "20px" }}
-          />
-          <h1 className="text-5xl ml-10">DISH DIVE</h1>
+            className="w-10 h-10 m-3.5 md:w-[60px] md:h-[60px] md:m-8"
+          />}
+          <h1 className="sitename text-2xl ml-0 md:text-[28px] ml-8 md:ml-7 lg:text-[36px]">
+            DishDive
+          </h1>
         </div>
 
-        <div className="flex justify-center items-center">
-          <ul className="flex justify-center items-center">
-            <li className="ml-7	">
-              <NavLink to="/" className="text-[32px]">
-                Home
-              </NavLink>
-            </li>
-            <li className="ml-7	">
-              <NavLink to="/about" className="text-[32px]">
-                About
-              </NavLink>
-            </li>
-            <li className="ml-7	">
-              <NavLink to="/team" className="text-[32px]">
-                Team
-              </NavLink>
-            </li>
-          </ul>
+        <div className="flex flex-col justify-center items-center">
+          <div className="w-10 h-10 mr-3.5 pt-1 cursor-pointer md:hidden">
+            <div onClick={toggleMenuIcon}>
+              {!isOpen ? <PiHamburgerFill size={30}/> : <LuUtensilsCrossed size={30}/>}
+            </div>
+          </div>
 
-          <img src={Line} alt="" className="ml-7	" />
+          {/* {!isOpen && ( */}
+          <div
+            className="flex flex-col justify-center items-center"
+          >
+            <ul
+              className={`navbar flex flex-col md:flex-row items-center  absolute z-20 md:static  left-0 w-full pl-0 transition-all duration-500 ease-in ${
+                isOpen ? "top-[90px] " : "top-[-490px]"
+              }`}
+            >
+              <li className="md:ml-8 text-xl md:my-0 my-7 lg:text-[28px] ">
+                <NavLink
+                  to="/"
+                  className="text-base lg:text-[24px]"
+                  onClick={toggleMenuIcon}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li className="md:ml-8 text-xl md:my-0 my-7 lg:text-[28px]">
+                <NavLink
+                  to="/about"
+                  className="text-base lg:text-[24px]"
+                  onClick={toggleMenuIcon}
+                >
+                  About
+                </NavLink>
+              </li>
+              <li className="md:ml-8 text-xl md:my-0 my-7 lg:text-[28px]">
+                <NavLink
+                  to="/team"
+                  className="text-base lg:text-[24px]"
+                  onClick={toggleMenuIcon}
+                >
+                  Team
+                </NavLink>
+              </li>
 
-          <img src={SwitchBtn} alt="" className="ml-7	 mr-7 cursor-pointer" />
+              <li className="md:ml-8">
+                {/* <img
+                  src={Line}
+                  alt=""
+                  className=" hidden md:inline-block h-[50px]"
+                /> */}
+                <div className="line"></div>
+              </li>
+                <li className="pt-3 md:ml-8 md:my-0 my-7">
+                {theme === 'light' ? (
+                <button onClick={toggleTheme} className="md:mr-7 lg:w-[50px]">
+                  <PiMoonStarsFill  size={26}  />
+                  </button>
+                ) : (
+                <button onClick={toggleTheme} className="md:mr-7 lg:w-[50px]">
+                    <RiSunFill size={26} />
+                </button>
+                )}
+              </li>
+            </ul>
+          </div>
+          {/* )} */}
         </div>
       </div>
     </div>

@@ -5,7 +5,34 @@
 }
 
 :root{
-    --hover-color: #e69239;
+  --primary-font:'Sansita Swashed',
+    cursive;
+  --secondary-font: 'Roboto Mono',
+    monospace;
+}
+
+#dark {
+  --primary-color: #1B1107;
+  --secondary-color: #DCB288;
+  --tertiary-color: #EFDFC5;
+  --quaternary-color: #C7AC8F;
+  --hover-color: #e69239;
+  --text-color: #EAE4E4;
+  --img-background-color: #1b1107;
+}
+
+#light {
+  --secondary-color: #FDF5F3;
+  --primary-color: #EAE4E4;
+  --tertiary-color: #EFDFC5;
+  --quaternary-color: #EEEADE;
+  --hover-color: #FD5A5B;
+  --text-color: #1E1E1E;
+  --img-background-color: #1b1107;
+}
+
+::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }
 
 html,
@@ -13,33 +40,187 @@ body {
   font-family: sans-serif;
 }
 
-.recipe-card {
+a.active {
+  color: var(--hover-color);
+}
+.header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-family: var(--primary-font);
+}
+
+.sitename{
+  letter-spacing: 0.15rem;
+  text-shadow: 2px 2px var(--hover-color);
+}
+
+.header-border {
+  border: 2px solid var(--text-color);
+}
+
+.line{
+  border: 1.5px solid var(--text-color);
+  height: 3rem;
+}
+
+#dark .recipe-card {
   background-color: #DCB288;
-  ;
+  color: black;
+}
+
+#light .recipe-card {
+  background-color: #EAE4E4;
+  border: 4px solid #c1c1c1;
+  padding: 0;
+}
+
+
+
+#light .intro-text{
+  color: white;
 }
 
 .img-bg {
-  background-color: #1B1107;
+  background-color: var(--img-background-color)
+}
+
+.landing-page{
+  font-family: var(--secondary-font);
+}
+
+.landing-page .intro-text{
+    font-family: var(--primary-font);
+    letter-spacing: 0.05rem;
+}
+
+.search-input{
+  font-family: var(--secondary-font);
+}
+
+.about-header{
+  font-family: var(--primary-font);
+
+}
+
+.about-text{
+  font-family: var(--secondary-font);
+  font-family: 1rem
 }
 
 .recipe-card img {
-  border-color: #DCB288;
+  border-color: #dcb288;
 }
 
 .recipe-card button {
-  background-color: #EFDFC5;
+  background-color: #efdfc5;
+}
+
+.recipe-list {
+  background-color: var(--primary-color);
+}
+
+.recipe-label{
+  font-size: 1rem;
+  font-family: var(--primary-font);
+  letter-spacing: 0.1rem;
+}
+
+.landing-page {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  /* font-family: var(--secondary-font); */
+}
+
+.list-and-pagination{
+    background-color: var(--primary-color);
+}
+
+.hero-div {
+  color: white;
+}
+
+.about-div {
+  background-color: var(--primary-color);
+}
+
+.about-text{
+  color: var(--text-color);
+}
+
+/* .dark-bg {
+  background-image: url(../src/assets/page-images/AboutBgDark.jpeg);
+}
+
+.light-bg {
+  background-image: url(../src/assets/page-images/AboutBgLight.jpeg);} */
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.navbar{
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.app-team-members-div h2{
+  font-family: var(--primary-font);
+}
+
+.app-team-members-div p {
+  font-family: var(--secondary-font);
+}
+
+.atm-card{
+  font-family: var(--secondary-font);
+}
+
+.atm-card .member-name{
+  font-family: var(--secondary-font);
+}
+
+/* SortingList */
+
+.sorting-btn {
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem;
+  letter-spacing: 0.05rem;
+  background-color: var(--hover-color);
+  color: var(--primary-color);
+  border-radius: 2rem;
+}
+
+/* Loader */
+
+.loader {
+  margin: 3rem auto;
+  border: 0.6rem solid var(--secondary-color);
+  border-radius: 50%;
+  border-top: 0.6rem solid var(--hover-color);
+  width: 5rem;
+  height: 5rem;
+  animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* recipe-pop-up */
-
-.recipe-pop-up{
-  background-color:#EFDFC5;
-  color: #1B1107;
+.recipe-pop-up {
+  background-color: var(--text-color);
+  color: var(--primary-color);
   overflow-y: scroll;
-  height: 70vh;
-  width: 60vw;
   padding: 1.5rem;
   position: absolute;
+  z-index: 10;
 }
 
 .recipe-pop-up h2 {
@@ -55,7 +236,7 @@ body {
   letter-spacing: 0.1rem;
   font-family: var(--secondary-font);
   color: var(--hover-color);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .recipe-pop-up .group {
@@ -74,98 +255,176 @@ body {
   display: flex;
 }
 
-.recipe-pop-up .mealType p {
-  background-color: #232931;
-  color: var(--hover-color);
-  padding: 1rem;
+.recipe-pop-up .mealtype-text {
+  color: var(--text-color);
+  background-color: var(--hover-color);
+  padding: 0.75rem 1rem;
+  letter-spacing: 0.1rem;
+  /* border-radius: 50px; */
 }
 
 .recipe-pop-up a {
   font-family: var(--secondary-font);
-  color: var(--hover-color);
+  color: var(--text-color);
   text-decoration: none;
-  background-color: #232931;
-}
-a.active {
-  font-weight: bold;
+  background-color: var(--hover-color);
 }
 
+.recipe-pop-up a:hover {
+  color: var(--hover-color);
+}
+
+.vertical-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.vertical-scroll::-webkit-scrollbar {
+  display: none;
+}
 
 /* pagination */
 
-.list-and-pagination{
-  margin-bottom: 5rem;
-  background-color: #1B1107;
-  padding: 1rem 0rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  position: relative;
+.list-and-pagination {
+  width: 95vw;
+  margin: 0px auto;
+  height: auto;
+  margin-bottom: 10rem;
 }
 
-.paginationBtns{
+.paginationBtns {
+  color: #1b1107;
   display: flex;
-  width: 30vw;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  padding: 0.5rem;
-  height: 4rem;
+  justify-content: center;
+  width: fit-content;
+  margin: 0px auto;
+  font-size: 1.1rem;
+  font-family: var(--primary-font);
+  background-color: #efdfc5;
 }
 
-.paginationBtns li{
-  list-style: none;
-  color: #232931;
-  background-color: #e69239;
-  padding: 0.5rem 1rem;
+.paginationBtns li {
+  letter-spacing: 0.1rem;
+  font-size: 16px;
+}
+
+.paginationBtns li a {
   cursor: pointer;
-  letter-spacing: 0.05rem;
+  display: block;
+  padding: 0.75rem 1.2rem;
 }
 
-.paginationBtns li:hover{
-  background-color: #232931;
-  color: #e69239;
+.paginationBtns li a:hover {
+  background-color: var(--hover-color);
+  color: black;
 }
 
-@media only screen and (max-width:1020px) {
-
-  .recipe-pop-up {
-    width: 70vw;
-    height: 80vh;
-  }
-
+.paginationActive a {
+  background-color: #dcb288;
+  color: black;
 }
 
-@media only screen and (max-width:860px) {
-
-  .recipe-pop-up {
-    width: 85vw;
-    height: 100vh;
-    padding: 1rem;
+@media screen and (max-width: 768px) {
+  .paginationBtns li {
+    font-size: 14px;
   }
 
-  .recipe-pop-up h2 {
-    font-size: 1.3rem;
+  .paginationBtns li a {
+    padding: 0.5rem 0.75rem;
   }
 
-  .recipe-pop-up .topic {
-    font-size: 1rem;
-    letter-spacing: 0.15rem;
+  .line{
+    display: none;
   }
-
-}
-
-@media only screen and (max-width:560px) {
-
-  .recipe-pop-up {
-    width: 85vw;
-    height: 100vh;
-    padding: 0.5rem 0rem;
-  }
-
 }
 
 
+/* app team member  */
+
+.app-team-members-div{
+  background-color: var(--primary-color);
+}
+
+#light .intro-header , 
+#light .intro{
+  color: #1B1107;
+}
+
+/* atm-card : app team member card */
+
+.atm-card{
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+}
+
+#light .atm-card{
+    border-color: #c1c1c1;
+}
+
+#dark .atm-card {
+  border-color: var(--secondary-color);
+}
+
+.member-image{
+  border-color: var(--secondary-color);
+}
+
+#dark .atm-card{
+  background-color: #DCB288;
+}
+
+.member-details{
+  background-color: var(--secondary-color);
+}
+
+#light .toggle-btn{
+  background-color: var(--text-color);
+  color: white;
+  border: var(--primary-color);
+}
+
+#dark .toggle-btn{
+  background-color: #DCB288;
+  border-color: #1E1E1E;
+}
+
+#light .card-center,
+#light .member-detail{
+  background-color: var(--primary-color);
+  border: var(--primary-color);
+}
+
+#dark .big-atm-card{
+  color: #DCB288;
+}
+
+#light .big-atm-card{
+    border-color: #c1c1c1;
+    background-color: #EAE4E4;
+  color: black;
+}
+
+.big-atm-card{
+  color: var(--text-color);
+  border-color: var(--secondary-color) ;
+}
 
 
+#dark .skills-bg {
+  background-color: #DCB288;
+}
+
+#light .skills-div{
+  border-color: #c1c1c1;
+}
+
+#light .skills-bg {
+  background-color: #c1c1c1;
+  color: var(--text-color);
+}
+
+#light .work-div,
+#light .education-div{
+  border-color: var(--hover-color);
+}
